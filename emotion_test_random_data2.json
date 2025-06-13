@@ -1,0 +1,62 @@
+{
+    "Adolescent Male Daily Life": [
+        {
+            "age_group": "Adolescent",
+            "gender": "Male",
+            "role": "High School Student",
+            "situation": "Daily Life",
+            "emotion": "Sadness",
+            "content": "친구들이 제 사진 올리면서 재밌게 얘기하는데 나랑은 안 함께해.  ",
+            "date": "2025-06-10"
+        },
+        {
+            "age_group": "Adolescent",
+            "gender": "Male",
+            "role": "High School Student",
+            "situation": "Daily Life",
+            "emotion": "Disgust",
+            "content": "점심시간에 갑자기 나오는 유리병 소리가 너무 신경 쓰인다. 다른 학생들이 내가 들을 수 있도록 일부러 조용히 하고 이것만 크게 부딪힌건 아닌지...",
+            "date": "2025-06-11"
+        }
+    ],
+    "Adult Female Daily Life": [
+        {
+            "age_group": "Adult",
+            "gender": "Female",
+            "role": "Housewife",
+            "situation": "Daily Life",
+            "emotion": "Disgust",
+            "content": "지금 아랫층에서 냄새가 너무 심해서 참아내기 힘들다. 누구였는지 모르겠지만 정말 역겨운 거림을 들이 마셨다고 하는 느낌인데, 이럴 때마다 창문을 열어야 하면서 밖의 시원한 공기를 맞은 건 아닌데...",
+            "date": "2025-06-11"
+        },
+        {
+            "age_group": "Adult",
+            "gender": "Female",
+            "role": "Housewife",
+            "situation": "Daily Life",
+            "emotion": "Sadness",
+            "content": "아이가 요즘 학교에서 어울리지 않아 보여서 마음이 무겁네요.  무슨 방법으로 도와줄 수 있을까...",
+            "date": "2025-06-15"
+        }
+    ],
+    "Elderly Male Daily Life": [
+        {
+            "age_group": "노인",
+            "gender": "남성",
+            "role": "은퇴자",
+            "situation": "일상생활",
+            "emotion": "혐오",
+            "content": "이번 시장에서 새로 오픈한 떡볶이 장국수가 너무 불깔끔해서 속상하다. 김치랑 간장도 묻어서 먹기 전에 이마 닦아야 할 것 같았다.",
+            "date": "2025-06-14"
+        },
+        {
+            "age_group": "Elderly",
+            "gender": "Male",
+            "role": "Retiree",
+            "situation": "Daily Life",
+            "emotion": "Sadness",
+            "content": "아이가 멀리 가서 얼마나 외로워. 그냥 집에만 있으면 시간이 아무리 가도 느껴지질 않아.",
+            "date": "2025-06-15"
+        }
+    ]
+}

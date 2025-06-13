@@ -1,0 +1,2368 @@
+{
+    "청소년 여성 학교생활": [
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "그 꼴, 진짜 질리겠어. 매일 그 애들 때문에 기분이 나빠지고..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "시험 점수가 만점이라고? 진짜?!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이라서 너무 답답해. 잘 못한다고 생각해서 기분이 안 좋아."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "이 험담하는 친구들 진짜 그냥 방치시켜야지. 나쁜 생각만 하고 사람들을 속이는 거 완전 질렸어."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "어...  진짜 이번 시험은 문제가 너무 어려웠는데, 혹시 퀴즈를 잘못 읽었는지도 모르겠어! "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이번 시험, 너무 어려웠는데.. 선생님은 아예 힌트도 주지 않고..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "요즘 친구들이랑 사이가 멀어진 것 같아. 나만 잘못한 건 아닌지, 내게 문제 있어서 그런지 모르겠어."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": "오늘 우리 반에서 퀴즈대회 진행했는데 내가 가장 많이 맞춘 것 같아! 🎉 친구들도 정말 잘했다고 해서 너무 기뻤어!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이잖아...  모든 게 잘 풀릴지 정말 걱정돼. "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": "오늘 수업 진짜 재미있었어요! 선생님께서 정말 웃긴 이야기를 해주시고, 우리 친구들도 같이 참여해서 너무 신나게 시간을 보냈어."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이라 정말 긴장돼. 잘 못하면 선생님께 또 야단질을 맞을까봐..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 중요한 시험인데, 아직 공부도 안 다 끝났어.  무슨 과목이든 잘 못할 것 같아 막막해..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "매일 같은 뻔한 일상, 정말 질린다.  저 사람들은 내가 어떤 감정이 느껴지는지 전혀 이해하지 않는 것 같아. "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이번 시험 점수 때문에 너무 화가 나. 다른 친구들은 잘봤는데 내가 엄청 부족해."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이 있는데 아직 공부도 안 봤어.  무슨 모국어점수를 받을지 몰라서 너무 무섭다."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "내가 한테서 오늘 그걸 왜 해봐? 나한테 정말 화가 나!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": "오늘 수학 시험 잘봤어! 넘나 문제들이 이해가 가서 답하는데 재밌었거든!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": "오늘 수업에서 퀴즈를 맞춰서 시험 성적이 더 올라갈 것 같아 정말 기뻐!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "매일같이 이런 상황이라니까. 짜증나 죽겠어."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "오늘 시험 결과가 나왔는데, 정말 안 좋더라. 친구들은 다 괜찮은 점수를 받았는데 내 점수는... 생각보다 너무 부족해서 속상해."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "깜짝! 시험 결과는 내가 생각했던 것보다 점수가 훨씬 좋았다!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이제 이런 시험만 치는 건 싫어. 계속 같은 문제만 봐서 지금 집에 돌아갈 때까지 얼마나 더 질리지?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "오늘 수업에서 질문 했는데, 정답이 맞는지도 모르겠어.  혼자 있는 게 너무 속상해."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "이새끼들 왜 항상 나한테 귀찮은 일만 시키냐. 정말 짜증나."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "매일 똑같은 수업, 똑같은 친구들...이러니 진짜 너무 지겨워."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이 있는데, 완전히 공부를 못 했어.  혹시 내가 부족한 점을 알 수 있을까?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "이 학교 진짜 질긴대...  똑같은 사람들만 계속 모이는데, 내가 어울릴 수 있는 친구 하나도 없어. "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "어제 시험 결과 나왔는데… 내가 생각했던 것보다 점수가 훨씬 낮아서 너무 속상해. 친구들이랑 같이 공부해서 기분 좋게 봐서 더 아쉬워."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이번 시험, 완전히 망쳤어.  뭐가 문제였는데 이렇게 오답도 많았지?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "어제 시험 잘 봤는데, 결과 받으면서 너무 속상했어. 친구들이나 선생님들은 다 좋은 점수를 받은데, 나는..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 중요한 시험이 있는데 아직 공부도 안 된 상태인데... 너무 압박스럽고 무서워."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "오늘 수업 시간에 내가 답했던 문제가 다 틀렸어. 다른 친구들이나 선생님은 나를 시선이 가만히 있어서 너무 부끄러웠고, 지금도 마음이 아파."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이런 불합리한 시험 방식은 정말 화나! 뭔 소리야? 저희 생각도 안 들고 진짜 답답해"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "내가 시험 答案 잘못해서 친구들이 다 나쁜거라며 놀리는데 진짜 화나!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "요즘 수업이 너무 지루해. 선생님도 개선점 없어서 매시간 딴짓하고 있다!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "친구들이 내 웃음이 진짜인지 아닌지 의심하는 거 같아. 오늘 시험 잘 보았는데, 그런다면 왜 이렇게 슬퍼 하는 건지 모르겠어..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 중요한 시험이 있는데,  잘 못하면 너무 안타깝다고 생각해서 걱정돼. "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "그 망인! 또 내 풀이를 골탕치라고 해서 어떻게 할 거야?"
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"청소년\",\"gender\":\"여성\",\"role\":\"학생\",\"situation\":\"학교생활\",\"emotion\":\"혐오\",\"content\":\"이 숙제 정말 지겹다. 또 시험 준비도 해야 하고,  머리가 아프다\"}\n```"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내가 내일 시험에 꼭 합격해야 하는데, 완전히 공부하지 못했어. 혹시 이대로면... 생각만 해도 두렵다."
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"청소년\",\"gender\":\"여성\",\"role\":\"학생\",\"situation\":\"학교생활\",\"emotion\":\"두려움\",\"content\":\"내일 시험이 있는데 아직 공부도 안 하고 망설여서 너무 무서워.  \"}\n```"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "친구랑 깜짝 파티 준비했는데, 선생님이 방문해서  😨"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이 있는데...  모르겠어. 잘 못 할까 봐 너무 걱정돼."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이런 상황, 진짜 😡 저만 잘못한 건가요?  "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이 있어서 너무 힘들어.  기억은 잘 안나고, 뭘 해야 할지 모르겠어."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "오늘 친구들이랑 시험 결과 논했는데, 내 성적이 몇 개나 점수가 떨어져서 속상해서 눈물 왔다."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "오, 진짜? 시험 결과 그렇게 좋은 거 같았는데 😱"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "이런 쓸데없는 수업은 언제 끝날까. 진짜 이 시간에 배우는 게 필요한 건 하나도 없어."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": "오늘 숙제가 너무 재밌었어! 내일 친구들과 결과물 함께 보여줄 수 있겠다며 기분이 좋아."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "매일 같은 뻔한 수업, 하지 마라! 진짜 지금 이 classroom은 끔찍하다."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이번 시험 때문에 너무 화가 나. 문제 답변만 하는 게 아니고, 이해하고 설명해야 하는 문제도 있잖아! 그런데 선생님은 시간을 충분히 주지 않아서 속상하고 불평스럽다."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "요즘 갑자기 시험이 너무 많아서 미쳤어! 내가 잘못 알고 있었던 거야? "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "오늘 수업시간에 친구들이 나랑 웃더라... 내가 안 보이는 동안 그냥 딴짓 하는 거 알아서 마음이 너무 아파."
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"청소년\",\"gender\":\"여성\",\"role\":\"학생\",\"situation\":\"학교생활\",\"emotion\":\"분노\",\"content\":\"이번 시험 엄청나게 어려웠잖아!  왜 이렇게 까다롭게 내놓는 거야? 정말 속상하고 화나...\" }\n```"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "오늘 수업에서 선생님이 내 과제 발표를 엄청 잘 해냈다고 칭찬해서! 진짜 놀랐어요. 저도 내가 얼마나 노력했는지 몰랐는데..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "요즘 수업시간에 너무 집중하기 힘들어.  친구들이 재밌는 이야기하는데 나만 계속 생각이 멀쩡해서 그 말 못 들으려나봐."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "쟤 뭐라고? 내가 왜 그래도 잘 해냈다는 건 아니지? "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "저녁 늦게까지 공부했는데, 시험 결과가 이렇게 좋다고? 내가 진짜 잘봤나?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "이제 그냥 이 학교를 나가고 싶어.  지금부터 계속해서 같은 일이 반복될 거라는 걸 알아서 속상하고."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": "오늘 시험 결과 나왔는데, 내가 봤던 순서는 정답이었다고! 너무 기뻤어!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "이 봐, 그 애들 좀 그만해!  지금껏 내 말 안 들었는지?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "요즘 선생님이랑 얘기하는 게 너무 힘들어. 항상 내가 잘못한 것 처럼 말하니까 속상하고 화가 나."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "요즘 갑자기 시험이 정말 많아서 놀라!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "오늘 수업 시간에 선생님이 시험 문제가 엉망인 거 들었어! 진짜?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "매일 같은 꼴이라 질린다.  선생님들은 이해도 안 하고, 친구들은 내 생각을 알려줄 줄 모르고... "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "왜 숙제를 1주일 앞당겨서 주지 않았는지, 선생님 말씀은 기억이 없는데.. "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이거 진짜 왜 이렇게 어려운 거야! 시험 볼 때면 항상 같은 문제만 나오잖아, 내가 공부한 게 아닌데!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "친구랑 늘 같이 어울리던데요, 이번 주부터 다른 친구들과 시간을 보내는 거예요.  혼자 있기보다 그들의 이야기도 많이 들어보고 싶은 마음도 있어서 그냥 속상하더라고."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이번 과제 진짜 개빡침! 시간 관리 안 했는데 이렇게 어려운 문제 생기잖아. 내가 화나고 질리지 않으니까, 아니면 그냥 수업 가는 게 지금 더 나을까?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "내가 왜 항상 이렇게 학업 성적 때문에 엄마 아빠에게 시비맞아야 하는 거지? 다른 친구들은 나처럼 열심히 공부하지도 않는데 내가만 그렇게 다가와서 안 좋은 결과를 얻었다고  말하는 거, 정말 끔찍해!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이 있는데, 아직 공부한 게 안 돼서 정말 무섭다..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이 있는데, 아직 공부도 안 됐어. 완전 망칠 것 같아서 너무 무서울 거 같아."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이 있는데 아직 공부도 안  끝났어.  너무 무서워..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "시험에 1등 받았어? 진짜?!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 면담이 있어서 너무 무서울 것 같아. 선생님 생각보다 더 심하게 질문할까봐."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "저 인간 왜 항상 나한테 그렇게 해? 진짜 질투하는 거니?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "왜 항상 나만 탓하는 거야! 내가 잘못한 건 아는데, 진짜 가슴이 불타니까..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이 있는데 아직 공부도 안 했어. 잘 못 볼 것 같아서 너무 무서울 것 같아."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "뭐... 내가 깜짝 선물 받았어? 누가 준 거야?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "요즘 수업시간에 집중하는 게 너무 어려워. 뭐라고 말해도 다른 친구들 덕분에 내가 얼마나 무능한지 느껴져서."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 발표야.presentation 준비 진짜 잘 안 되었어. 무슨 질문이 날지도 모르겠다..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이거 정말 짜증나! 시험 때문에 너무 스트레스 받고, 친구랑도 다투게 되어서 머리가 아직."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 발표 해야 하는데, 너무 떨리고 망설이지 않고 잘 말할 수 있을까? 모든 게 어렵다."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "똑같은 얘기만 하는 선생님들, 진짜 엿같다. 개나 다르게 생각하는 거 없어?"
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"청소년\",\"gender\":\"여성\",\"role\":\"학생\",\"situation\":\"학교생활\",\"emotion\":\"혐오\",\"content\":\"내가 왜 이런 학급에 들어왔지... 사람들 다 조심스럽게 행동해도 내 상황을 이해하려고 하지 않아. 날 보는 눈만 보고 나를 좋아하지 않는다는 걸 알 수 있어.\"}\n```"
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"청소년\",\"gender\":\"여성\",\"role\":\"학생\",\"situation\":\"학교생활\",\"emotion\":\"분노\",\"content\":\"또 왜 내가 틀렸는지 설명도 안 하고 점수만 받았어! 진짜 이렇게 무례하게 말하는 건 정말 나쁘잖아!\"}\n```"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "또 갑자기 시험인데 미리 공부할 시간도 없이  뭐야 이런 상황 정말 힘들어."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": "요즘 수업 너무 재밌어! 내일 또 듣고 싶다!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "매일 같은 꼴이라 지겹다. 진짜 이 학교에 있으면 더 이상 못 산 것 같아."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": "야! 오늘 숙제가 끝나서 정말 기분이 좋아. 이번 주말에 친구들과 데이트 갈 수 있겠다!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "이 학교는 정말 역겨워. 언제나 같은 일 반복이고, 사람들도 진짜 별로야."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이번 시험, 내가 정말 열심히 공부했는데 왜 이렇게 점수가 낮지? 선생님께도 말을 해봤는데 이해해주시는 것 같은데... 진짜 속상하고 화가 나. "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "슬픔",
+            "content": "친구들이 점점 다른 걸 찾기 시작했어. 나랑는 시간도 덜 보내고, 같이 노는 것도 적은데... 내가 뭐 잘못한 건 아닌지 계속 생각돼."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "두려움",
+            "content": "내일 시험이 있는데, 아직 공부도 안 하고 너무 무서워. 뭐라고 해야 할지 모르겠어..."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "놀람",
+            "content": "그냥 시험 점수만 봐서 평가하는거야? 나랑 친구들은 노력하고 열심히 한 거잖아! "
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "혐오",
+            "content": "매일 똑같은 일이라 지겨워.  내가 원하는 게 전혀 없는 이 곳에서 내게 맞는 사람을 만나기는 불가능하겠어."
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": " 오늘 숙제가 너무 쉽고 끝나서 진짜 행복해! 내일은 친구들과 영화 볼 예정이야!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "기쁨",
+            "content": "야근했는데 오늘 시험 결과 나오네! 내가 생각한대로 잘봤다니까! 너무 기뻐!"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이거 뭐야 진짜!! 내 점수 이렇게 깎아버릴 수 있니?"
+        },
+        {
+            "age_group": "청소년",
+            "gender": "여성",
+            "role": "학생",
+            "situation": "학교생활",
+            "emotion": "분노",
+            "content": "이제까지 진짜 무슨 일이고! 시험 날짜도 바꾸지 않고, 그냥 푸는 문제가 어려운 거지!"
+        }
+    ],
+    "성인 남성 직장생활": [
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "오늘 프로젝트 진행이 잘 됐어요! 다음 단계도 설레네요."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내가 이 프로젝트를 성공시킬 수 있을지 걱정돼. "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이런 회사 생활은 진짜 죽는 게 낫겠어. 매일 이 질투심, 시기심 가득한 동료들과 함께해서 내 정신이 지치고 있어."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "월급이 2배나 올라갔대? 그거 진짜야?"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "오늘 또 야근 끝났다. 힘이 빠져..."
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"성인\",\"gender\":\"남성\",\"role\":\"직장인\",\"situation\":\"직장생활\",\"emotion\":\"혐오\",\"content\":\"이렇게 또 오전만 힘들게 일하게 하는 건 누가 만든 거지. 사람은 이런 회사에 있어서 살아갈 수 없어.\"}\n```"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "월 평균 근무 시간이 줄어들지 않으면 내년까지 승진 못할 것 같아. 갑자기 이번 프로젝트가 어렵게 되고, 요즘 불안하다."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "또 내가 뭔가 잘못한 것 같아. 요즘 이런 생각이 많고, 너무 지쳐."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "오늘 프로젝트 마무리해서 진짜 너무 기분 좋다! 팀원들도 잘한 것 같아요. 저녁에 축하잔치 가자!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "아침부터 이리까지 모든 게 잘 안됐어. 뭘 하든 실패하는 기분이 들어서..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내년 승진 시험, 이번에 합격해야지. 하지만  실력이 부족해서 정말 막막해."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "갑자기 이 프로젝트가 승인되셨다는 소식에 정말 놀랐어요!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 신경 쓰지 않고 뭔가 제대로 안 하는 모습 보면 이게 또 어떻게 끝나야 할 지 질문이 생길 수밖에 없어."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "오늘 또 늦게까지 일해야 할 것 같아. 가족에게 미안하다고 말하는 게 더 귀찮은데."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "오늘 또 퇴근하면서 생각이 많아. 어느새 이렇게 바쁘고 지치는 모습에 내가 진짜 행복할까 싶은데, 그렇지 않기도 하고."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 헛일 때문에 시간낭비 하지 않아야 하는데... 신경 쓰는 건 아닌가! "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이렇게 일정을 바꿔놓으면 나에게 어떤 이점이 있지? 😡"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이 일상, 진짜 지치겠어. 하루 종일 똑같은 일 반복하면서 사람들도 별로 아니고..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 일은 정말 잦아. 다시는 이 상황에 처하길 바라지 않지만..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이렇게 시키고, 그래도 내가 잘못했다는 건? 왜 항상 저만..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 상황은 정말 믿기지 않아. 누가 이렇게 중요한 프로젝트를 끝날 무렵에 변경을 요구할까? 내 노력은 다 헛수고였잖아!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "낼 프로젝트 진행이 정말 힘들 것 같은데.. 성공할 수 있을까?"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 업무 처리 방식은 정말 이해가 안된다. 매번 같은 실수를 반복해서, 우리는 왜 이렇게 고통받아야 하는 거지? "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 신경 쓰지 않고, 끝내주면 좋겠어. 왜 자꾸 이렇게 하찮은 일을 하는 거야!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이 회사 culture, 진짜 미치겠다. 정신없는 것 같은 사람들만 몰려있잖아.  "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내가 이번 프로젝트를 끝낼 수 있을지 걱정돼. 요즘 업무량이 너무 많고,  프로젝트 마감일까지 시간이 부족해졌어."
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"성인\",\"gender\":\"남성\",\"role\":\"직장인\",\"situation\":\"직장생활\",\"emotion\":\"혐오\",\"content\":\"이젠 좀만 숨쉬고 싶다. 언제까지 이런 상황을 견뎌야 할까.\"}\n```"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 일은 벌써 두 번째라! 다시는 이렇게 안 되니까!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "오늘 사이트 로딩 속도가 정말 빨랐다!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이 일만 하면 살아갈 순 없어. 똑같은 일, 매일 같은 사람들..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이 회사에선 진짜 모든 게 답답해. 사람도 말도 안 되고, 업무만 늘어서 죽을 것 같은데."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "오늘 회의 끝나서 간단한 커피 마시러 갈까 했는데, 문이 완전히 다 열려있네?! 정말 당황스럽다... "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "오늘 갑자기 승진 통보받았다.  정말 당황돼!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "이번 프로젝트 진행상황 보고서가 이렇게 빨리 완료되다니... 정말 대단한 일 아니야?"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "이번 프로젝트 진행은 너무 힘들었어. 결과는 좋았지만, 그 과정에서 정말 많이 지쳐."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "임금 급여 증가? 진짜로요?"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내년에 프로모션 시험이 있잖아. 생각만 해도 막막해서 속이 차가워"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "급하다는 말은 했는데, 이렇게 빨리…"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 회사는 정말 미친 줄 모르겠어. 매일 야근하고, 업무량도 압도적이고, 인정은 조금도 안해주니까..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "지금 이 일이 정말 힘들어.  왜 이렇게 어려운 상황에 처하게 되었는지 이해가 안 가."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런  bullshit 시스템 때문에 매일 고통받는다! 누가 이걸 만들었을까? 수정 못하는 건 아닌지..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "이번 프로젝트 마무리해서 너무나 기분 좋아!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "월급이 갑자기 20% 증가했다고? 정말?"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이건 막상 해결책도 없고, 계속해서 이런 상황은 참견하기 싫어."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내일 발표 때문에 밤새도록 준비했는데도, 아무리 하더라도  실망시킬 것 같아. 내가 이번 프로젝트를 잘 관리하지 못해서 회사에 큰 손해를 입히면 정말 안되겠어."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "역시 갑작스러운 발표였다..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "매일 같은 일이 반복되고, 사람들이 상상보다 못할 정도로 치부하는 거 같아. "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "내가 이런 프로모션 받게 될 줄이야..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 어리석은 결정, 누가 이런 계획을 세웠는지 봐야겠다."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내가 이 프로젝트를 잘 해낼 수 있을까 봐..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이 회사에선 꼼짝 못하게 하는 상사가 있다. 점점 더 많은 업무를 내려받고, 스트레스도 많아. 하루종일 그냥 화나게만 해."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "이번 프로젝트는 너무 어려웠어. 늘 생각만 하고, 오랜 시간까지 일해서 지금은 정신없다."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "퇴근길에 산책하면서 생각했는데, 어디에서부터 달라진 걸까. 내가 그렇게 바뀌었는지, 아니면 세상이..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이번 프로젝트 진행도가 지나치게 느려서 이런 상황이 생겼다니까? 정말 속상하고 화가 나."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내가 이 프로젝트를 잘 해낼 수 있을지 막상 의심이 들어. 시간도 부족하고, 다른 사람들과 비교하면 내 실력은..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내가 이번 프로젝트를 제대로 마무리할 수 있을지 걱정돼. 지난 프로젝트도 잘 안 됐는데, 또 그럴까봐."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내일 발표해야 하는데, 아직 준비가 안 되었어. 무슨 말을 해야 할지 전혀 생각도 안 나고... 오늘 하루 종일 걱정하고 있다."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내년 프로젝트 성공 여부가 다음 승진과 직결이라 너무 걱정돼. 실패하면 어떻게 해야 할지 생각만 해도 속상하고 무서워."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "오늘 또 시중에 나가서  고민이 많아. 요즘은 어떤 일들이 있어도 기분좋게 해결할 수 없는 것 같다."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내가 이 프로젝트를 끝내서 승진할 수 있을까? 너무 많이 압박감이 크다."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내일 회의, 진짜 망설여..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이런 짓궂은 동료들 때문에 어떻게 살아야 할지 모르겠어.  "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "야근 끝났네! 오늘 마무리해서 내일은 쉬는 날이라 정말 기분 좋아."
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"성인\",\"gender\":\"남성\",\"role\":\"직장인\",\"situation\":\"직장생활\",\"emotion\":\"혐오\",\"content\":\"이 회사 생활 정말 질투 받는가. 언제까지 이러야 하는 건지.\"}\n```"
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"성인\",\"gender\":\"남성\",\"role\":\"직장인\",\"situation\":\"직장생활\",\"emotion\":\"두려움\",\"content\":\"이번 프로젝트 실패하면 승진 기회도 날아갈까 봐 밤마다 고민돼. \"}\n```"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이거 정말 어떻게 해결하면 좋겠어. 계속해서 이런 일 생기면 난 미쳐버릴 것 같아."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "오늘 프로젝트 마무리해서 너무 기분 좋다! 팀원들도 대단한 일을 하고 우리가 이겨낼 수 있다는 자신감이 생겼어. "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "늘 같은 일상이라 답답하다.  저녁까지 계속 이런 업무 처리해야 하는데, 마음이 무거워."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "오늘 프로젝트 결과 발표하고 완벽하게 성공했어! 팀원들 모두 다 기뻐서 정말 행복하더라."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "오늘 또 연말 회식. 하지만 이젠 즐겁지 않아..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내가 이번 프로젝트를 잘 처리할지 걱정돼. 마감일이 다가오는데 아직도 부족한 부분들이 많고, 상사의 기대도 높아서"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 상황은 절대 받아들일 수 없어. 정말 화가 나!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "새로운 프로젝트를 승진받아서 정말 기분이 좋다!  "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이 회사는 정말 암살당할 것 같다. 항상 이런 상황에 처해 매일 갈등만 가득하고."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 헛된 회의는 끝나지 않을까? 시간낭비도 하고, 제대로 논결되지 않는다니까! "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "갑자기 이번 프로젝트를 맡게 되어, 당황스럽다! "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내가 이번 프로젝트를 잘 마무리할 수 있을지 막상 생각하면 속이 너무 조여. 부서 지도자는 기대치가 높고, 오랜 시간 투자해야 하는 프로젝트니까."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "이런 일이 벌어지고, 내가 이걸 처리해야 한다니..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이 회사의 분위기 정말 역겨워. 누구도 믿을 수 없어. "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "내가 이런 프로젝트를 맡게 되나?!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "임원진이 내가 제안한 아이디어를 깜짝 승인해서 뭔지 모르겠어. 설레는 마음이 크다."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "새로운 프로젝트를 시작하게 됐어!  진짜 설레는 일이네요!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이 회사는 정말 끔찍하다.  항상 같은 일 반복하고, 이런 시스템 속에서 살아가는 것 같다."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "오늘 또 회의가 길어서 피곤해.  아무리 열심히 해도 인정받지 못하는 기분이 들어."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "역시 월급이 껑충 あがった군! 어제 내가 생각했던 내용 정말로 실현돼? "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "분노",
+            "content": "이런 상황은 정말 짜증나!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "오늘 회의에서 프로젝트 승인이 되었다고! 내가 제안한 아이디어를 받아들이고, 이제 실제로 시작할 수 있겠다. 정말 설레네!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "이번 프로젝트 실패해서 너무 마음 아프다. 밤늦게까지 열심히 노력했는데..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "두려움",
+            "content": "내가 이 프로젝트를 성공시킬 수 있을까 봐… deadlines 다 가까워지고 아직도 끝나지 않아. 모든 게 잘못 될까 염려되네."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "오늘 일이 너무 많았어. 다시 한번  잘못된 결과라니..."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "이렇게 갑자기 프로젝트가 추가된다는 건... ?"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "아무리 노력해도 인정받지 못하는 게 힘들어.  왜 내가 이렇게 쓸모없을까?"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이런 상황, 정말 엿같은 사람들이 많다. 언제까지 이렇게 계속해야 할지 미쳐버릴 것 같아."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "혐오",
+            "content": "이렇게 계속 이런 일만 있어서 짜증나. 정말 질투스럽고 속상하고, 내가 진짜 그저 욕할 수밖에 없어."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "야, 이 프로젝트 진짜 잘 끝났다! 팀원들도 모두 열심히해서 너무 대단한 결과물을 만들었어. 오늘 저녁은 취침 시간 전까지 축하드리고 자유시간 좀 가져봐야겠네."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "슬픔",
+            "content": "오늘도 회사에서 힘든 일이 많았어.  다음 주는 더 많은 프로젝트를 진행해야 하는데, 어떻게 해야 할지 모르겠어."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "오늘 프로젝트 마무리해서 좀 놀러갈 예정이야!"
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "놀람",
+            "content": "이번 프로젝트 결과... 그렇게 좋은 성과라고? 내가 모르겠다! 솔직히 생각보다 훨씬 더 잘 나오는 줄은 전혀 상상 못했어."
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "이번 프로젝트 완료해서 너무 기쁘다! 드디어 힘들었던 시기를 잘 헤쳐나갈 수 있었다는 게 정말 대단하다는 생각이 들어. "
+        },
+        {
+            "age_group": "성인",
+            "gender": "남성",
+            "role": "직장인",
+            "situation": "직장생활",
+            "emotion": "기쁨",
+            "content": "오늘 프로젝트 완료해서 정말 기분이 좋아! 팀원들도 함께 축하하며 시킨 저녁은 최고였다!"
+        }
+    ],
+    "노년층 남성 일상": [
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "아랫동네에서 한 젊은이가 나를 살짝 부딪히고, 무슨 말을 하는지 잘 들리지 않았어. 그 사람은 날 바라보며 미소 지었지만, 나는 어지러운 마음에 뭔가 안 좋은 일이 생길까봐 불안한데..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이 젊은 세대들은 요즘 정말 무례한데! 나를 들어주지 않고, 내 말도 신경쓰지 않는 거지. "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이 빌어먹을 TV, 또다시 고장났잖아! 매일 그렇지. 열심히 살았는데 이런 불편한 일만 들어오는 건데!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이제 그만해!  지금까지 너무 참아온 게 아니야!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "오늘 아침 햇살이 너무 좋아서 기분 좋은 하루가 되겠네! "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "아내가 먼저 돌았는데, 이제 저도 누군가를 보고 싶은 시간이네요."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "그게 진짜라고? 이 세상이 변했구나!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "아들아들이 갑자기 돌아오네. 오랜만에 모여서 한잔 하려고 하니 정말 기뻐."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "내 아들이 날아가서 얼마나 힘들지 모르겠구나. 자꾸만 그를 생각하고, 다시 볼 수 없다는 게 마음이 너무 아파."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "이 젊은 세대,  말도 제대로 안 하고.."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "이 새들은 정말 골칫거리야. 언제나 삑! 하고 소리를 내서 잠 못 이루겠어."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이 새끼! 왜 그렇게 내 말 안 들었어? 나한테 정말 존중하는 거냐?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "아이고, 이제 70대라니. 시간이 참 빠르다니까!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "내가 이제 나이가 들어서... 아이들이 돌봐주는 게 걱정이야.  혼자가 된다고 생각하면 무서울지도 몰라."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "요즘 몸이 많이 약해져서 스스로 일도 할 때마다 무섭다. 어떻게 해야 할까?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "요즘 아들아 옛날 사진 보니까, 참 시간이 너무 빠르게 지나간 것 같네. 나도 그때처럼 활기차고 건강했으면 좋겠어."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "아들과 자주 연락 못 하는 게 아쉬워."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "오늘 아침 햇살이 따스했더라, 정말 좋은 날씨네! "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "아이가 왜 이렇게 불성실한 거지! 내가 얼마나 노력해서 일했는지 모르겠네."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "내가 지갑 속에 든 돈이 사라진 거야?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "내가 혼자 살면서 이런 낡은 집에 머물고 있는 거, 앞으로부터는 더 이상 괜찮지 않을까. 내가 어떻게 해야 할지 모르겠어."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "아내가 가족사진 보면서 눈물만 흘렸어. 얼마나 그리워하는지 알겠는데, 내 마음도 같으니까 말로 표현하기 힘들다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "지금 이 시절에 그런 기술이 있나? 내가 살았던 시절에는 생각도 못했어."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "요즘 혼자 사니 신문도 안 볼 수가 없어. 집에 너무 조용해서 사람이 와서 나한테 아무런 행동을 할까봐 항상 불안하고 계속 문벨소리도 크게 들리고..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이새끼들이 정말 없다! 내 말 듣지도 않고 시끄럽게 해서 집 안을 맡막하게 만들어. "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "요즘 어른들이 젊은 사람들 말대로만 해서 나이 먹고 살아가는 건 안되겠다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이 시대는 소리를 듣지 않는 것 같은데. 내 말은 전혀 신경쓰지 않아. "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이런 세상이라니. 할머니가 걷기 어려운 길도 뭔지 모르고 돌아다녔어. 정말 분노하겠어."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이런 날씨는 아무것도 할 수가 없는데 왜 이리 더운지. 😡"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "아이들은 요즘 참 Entia에요.  존경하는 척 하는 데 서툴러서 내 말은 전혀 들어듣지 않는다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "집에 와서 잔뜩 지쳤는데, 아내가 전에 좋아했던 그 요리를 만들어 주기엔 나는 너무 무겁게 느껴져. 요즘은 내가 어떻게 해도  아내를 행복하게 할 수 없을까."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": " 요즘 아이들은 정말.. 말도 안 돼. 공격적이지 않으면 제대로 된 사람들이 아니라고 생각하는구나."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "아, 이제는 스마트폰으로 사진도 보낼 수 있구나!  "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "아들, 딸이 모두 서울에 살고 있는데,  병원 가는 건 내가 혼자서만 해결해야 하는구나. 나 이제 오래 못 살겠네."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "아이들이 이런 시대에 살아가는 게 얼마나 쉽겠어. 가격이 저렴할 줄 알아도 사전에 확인하지 않고 계속 물건을 사기만 한다니까."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "내 아들, 자기 방에 갇혀 있어서 얼마나 속상한지 모르겠어. 왜 내가 이렇게 쓸쓸하게 지낼까?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "이새끼들은 요즘 정말 뻔뻔하지. 나한테 말도 안 해놓고 그냥 가버린다! 속상하네."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "아내가 가진 지 몇 달이 지났는데, 아직은 혼자만의 시간이 어렵다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "요즘 이렇게 혼자 살다 보면  누가 있을지 모르는 소리 들릴 때, 정말 무서워..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "아내가 없어서 요즘 식사도 맛없고..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "이제 요즘 젊은 애들은 세상 물정도 모르고..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "손자네가 요즘 코딩하는 걸 봤는데, 이런 게 지금은 중요한 거라니..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "오늘 아침 햇살이 따뜻해서 기분이 좋아. 요즘은 건강도 좋아서 활기차니까, 가족들과 함께 산책갔다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": " 요즘 아이들, 봐도 속상하거든. 예의가 없고 말투도 못된 게 많아."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이 새로 나온 기술은 정말 어렵다. 젊은애들이라도 헷갈리면서 내가 배우려고 하면 더더욱 속상하다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": " 요즘 젊은 세대는 정말 무례하지.  없는 일이 있고, 존댓말도 안 하네."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "아이폰이라도 이렇게  빨리 바뀌네! 몇 년 전에는 이 정도 컬러도 없었는데."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "아주 맑은 날이네요. 이런 날씨면  몸도 좋아지고 마음도 편안하죠."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "이게 뭐야? 이런 기술도 있었군!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "아! 햇살이 참 좋네. 오늘 날씨가 너무 좋아서 기분까지 좋더라."
+        },
+        {
+            "error": "parsing failed: Expecting value: line 1 column 1 (char 0)",
+            "raw": "```json\n{\"age_group\":\"노년층\",\"gender\":\"남성\",\"role\":\"일상인\",\"situation\":\"일상\",\"emotion\":\"두려움\",\"content\":\"요즘 아무리 조심해도 걷다가 추락할까봐 항상 두렵네요.\"}\n```"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "이거 뭐야? 내가 어떻게 이걸 알아들을 수 있겠어?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "옛날 사진 보고 너무 그리워. 아들 얼굴 보니  그때 다시 돌아가서 얘랑 더 많은 시간을 보내고 싶다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이런 세상은 뭐지! 나를 봐주는 사람은 아무도 없어. 내가 노력해왔는데 다 무슨 소용 있을까? 속상하고 화나!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "내가 혼자 사는 건 정말 무서워. 누군가에게 도움을 요청하지 않으면 어떨지 생각하면 불안하더라."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "옛날 그때처럼 가족이 모두 모였던 게 좋았으면 좋겠어. 요즘은 각자 살아서 자주 볼 기회가 없네."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이 젊은 세대들은 정말 무례하구나. 나를 제대로 들어주지 않고, 말도 안 듣고."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "이 젊은 세대는 정말 못됐다. 공손히 말하는 거도 모르고 시대에 뒤떨어진 생각을 하는 건 어떻게 되나."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "손자랑 함께 식사했는데, 내가 좋아하는 음식도 잘 먹었대. 그런 모습 보니 정말 기쁘네."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이게 또 뭐야?  무슨 일이 있지?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "젊은이들은 요즘  manners 없는 거 같아. 날 보지도 않고 지나가고, 말도 좀 더 예의 있게 해야지."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "이렇게 혼자 있으면...어쩌면 내가 누구를 알아보지 못하고 다칠 수도 있잖아. "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "혼자 집에 있어서 밤에는 조금 무서울 것 같아요..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "이런 세상도 있었구나! 요즘 어린들이 다 이렇게 하는 거라니!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "아이가 전자기기를 멀쩡히 사용하는데, 저도 이렇게 배우고  어려워하더니..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이 시대에 젊은 애들이 날 보고 그렇게 무례하게 말하는 건 정말 나쁘다. 모르는 사람에게 존경심도 없어."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "이 새끼들은 요즘 참 쓸모없다.  "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "천적이라니? 나도 모르고 내 옷장에 있어왔다! 도대체 누가 그랬겠어?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이런 젊은 세대는 점점 무례해졌다.  말도 안 들고 끊임없이 소리만 지르는 것!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "요즘 이렇게 혼자 살아가는 게  무섭다. 아직 잘 모르겠지만…"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "손가락으로 스마트폰 화면 자리 잡히는게 힘들다니까? 요즘 아이들은 어떻게 하는지 모르겠네."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "요즘 이런 사회는 좀 무섭지. 어떻게 살아야 할지 모르겠어."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이게 뭔 소리야! 내가 얼마나 오랫동안 이걸 해왔는지 알아?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "아이가 혼자 외출하는 게 조금 두렵다. 요즘 세상이 무서워..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "어제 손자들이 내 멋진 노래를 들려주고 칭찬해 주었단다! 요즘은 저만 잘 따라하지 못하는데, 그런 제가 아직도 좋다는 말을 들어 기분이 참 좋아요."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "아, 이게 뭐야? 요즘 소년들이 하는 그… 게임?  "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "아, 날씨가 참 좋다. 이렇게 햇살 좋은 날에 산책하기 제격이네요!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": " 요즘 가격이 올라가서  돈이 부족해서 걱정이 많아. 지난달에는 전기료만 두 개월 치르는 데 쓰고 나니, 이번 달은 어떻게 해야 할지 몰라"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "혼자 있는 건 참 무서운 일이지... 아무도 내게 도와줄 사람 없을까 봐."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": "젊은 아이들 요즘이라니.... 전혀 예의가 없어.  차례도 모르고, 나보다 먼저 말하는 경우도 있어..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이런 뜨거운 날씨에 에어컨 고장나서 시끄러우시다!"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "이게 뭐야? 이제 자동차가 하늘에 날 수 있대?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "매일 똑같은 일이야! 내가 하는 말도 못 들어주고, 그저 시계만 보고 있지."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "요즘 몸이 많이 아프고, 내가 무슨 병인지 모르겠어. 진료받아봐야 할까? 하지만 병원에 가는 것도 나른하고...  "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "다음 달로 혼자 지내는 게 두렵지. 사람들이 줄어들면서  마음이 이렇게 비틀거리네."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": " 요즘 병원에 가면 정말 뭔가 이상한 일이 생길까봐..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "세상이 이렇게 빠르게 바뀌었구나. 전자기기 하나도 모르는 사람이라, 지금은 어디가 먼지?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "혐오",
+            "content": " 요즘 어린애들은 용도 없이 소리만 치지 않으면 안 되는구나.  말조차 제대로 하지 못하는데 그렇게 시끄럽게 떠들다니 참 괘씝하다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "아이가 뭐라고 해도 들어주지 않아. 이 세대는 나한테 도와줄 사람이 없다는 건 아니야?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "아! 이날씨는 정말 참 좋네요. 햇살이 따스하고 제가 좋아하는 오렌지꽃도 피고 있어요."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "아들도 늘 바빠서 자주 연락이 안 와. 오랜만에 전화했는데, 그런 말까지 하는 모습은 나를 얼마나 속상하게 해?"
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "오늘 아침 아들딸들이 먼저 나를 부르고 내 생일에 선물까지 준비해서 와줬다. 그런데 정말 오랜만에 보기에 눈이 가슴도 풀릴 만큼 행복했다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "오늘 날씨가 정말 좋더라. 햇살이 따스해서 마음도 좋아지네요."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이 젊은 세대들은 정말 무례하구나! 나를 도와주고 싶어하는 마음도 없으니..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "아이들이 자꾸만 나를 방문하지 않아.  옛날엔 내 손 잡고 놀러오곤 했는데..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "놀람",
+            "content": "그렇구나, 요즘 어린들은 이런게 인기 있으니? 좀 모르겠지만..."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "분노",
+            "content": "이런 시세라면 뭘 살 수가 없는데! 젊은 날 제발 노력했잖아. "
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "슬픔",
+            "content": "요즘 아침에 뜨는 해가 보기 좋지 않아. 옛날처럼 따스하지만, 그때와 비슷한 감정은 느껴지질 않는다."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "기쁨",
+            "content": "햇살이 참 따뜻하고 좋지요! 오늘 날씨도 보기 좋아서 기분 좋은 하루네."
+        },
+        {
+            "age_group": "노년층",
+            "gender": "남성",
+            "role": "일상인",
+            "situation": "일상",
+            "emotion": "두려움",
+            "content": "혼자 살면서 병원 가는 게... 좀 무섭네요. 아이들이  지금은 바쁘대도, 언젠가 나를 돌봐줄 준비가 되어 있을까 걱정돼."
+        }
+    ]
+}
