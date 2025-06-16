@@ -1,4 +1,4 @@
-import streamlit as st
+import streamlit3 as st
 import pandas as pd
 import numpy as np
 import json
