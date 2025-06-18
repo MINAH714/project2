@@ -1,0 +1,47 @@
+name: FastAPI CI/CD to GHCR
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # 수동 실행 허용
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write # GHCR에 푸시하기 위해 필요
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        push: true
+        tags: ghcr.io/${{ github.repository_owner }}/fastapi-empathy-generator:latest
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
+
+    - name: Deploy (Optional - Placeholder)
+      run: |
+        echo "Docker image pushed to GHCR. You would deploy it to your server here."
+        # 예시: SSH를 통해 서버에 접속하여 Docker 컨테이너 실행
+        # ssh user@your_server_ip "docker pull ghcr.io/${{ github.repository_owner }}/fastapi-empathy-generator:latest && docker stop fastapi-app || true && docker rm fastapi-app || true && docker run -d --name fastapi-app -p 8080:8080 ghcr.io/${{ github.repository_owner }}/fastapi-empathy-generator:latest"
+      # env:
+      #   SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      #   SERVER_IP: ${{ secrets.SERVER_IP }}
+      #   SERVER_USER: your_username

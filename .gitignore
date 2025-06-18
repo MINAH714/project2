@@ -73,3 +73,5 @@ ai-1/**/*.png
 **/package-lock.json
 **/package.json
 **/pastdata
+
+**/pastdata
