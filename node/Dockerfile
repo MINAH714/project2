@@ -11,7 +11,7 @@ RUN npm install
 
 # Step 4: 애플리케이션 코드 복사
 # server.js (이전 main.js), index.html, login.html 파일을 복사합니다.
-COPY server.js .
+COPY main.js .
 COPY index.html .
 COPY login.html .
 # 추가적으로 필요한 정적 자원(CSS, JS, 이미지 등)이 있다면 해당 디렉토리를 복사합니다.
