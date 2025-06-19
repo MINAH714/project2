@@ -23,4 +23,4 @@ EXPOSE 3000
 
 # Step 6: 애플리케이션 실행 명령어 (PM2 사용)
 # pm2-runtime은 Docker 환경에 최적화된 PM2 실행 모드입니다.
-CMD ["pm2-runtime", "server.js"]
+CMD ["pm2-runtime", "main.js"]
