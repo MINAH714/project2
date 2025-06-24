@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Response
+from fastapi import FastAPI, HTTPException, Response, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from datetime import datetime, timedelta
@@ -6,10 +6,13 @@ import random
 import json
 import requests
 from typing import Literal, List, Dict, Union, AsyncGenerator
-from starlette.responses import StreamingResponse # StreamingResponse 임포트 추가
+from starlette.responses import StreamingResponse, FileResponse
+import os
+import uvicorn # uvicorn 임포트 추가 (개발 시 실행용)
 
 app = FastAPI()
 
+# --- Configuration ---
 origins = [
     "http://localhost",
     "http://localhost:8501",
@@ -24,6 +27,8 @@ app.add_middleware(
 )
 
 LM_STUDIO_API_URL = "http://localhost:1234/v1/chat/completions"
+OUTPUT_DIR = "generated_dialogues" # 저장 폴더 상수화
+os.makedirs(OUTPUT_DIR, exist_ok=True) # 폴더 없으면 생성
 
 AGE_GROUPS = {
     "teenager": (13, 19),
@@ -33,16 +38,17 @@ AGE_GROUPS = {
 }
 
 SITUATION_OPTIONS = {
-    "teenager": ["학교 생활", "감정 변화", "취미 및 여가 활동 탐색"],
-    "adult_young": ["사회 초년생", "인간관계 및 독립", "자기개발"],
-    "adult_middle": ["가정", "직장생활", "건강 관리"],
-    "senior": ["은퇴 및 여가 생활", "건강 관리", "사회적 고립"]
+    "teenager": ["학교 생활", "감정 변화", "취미 및 여가 활동 탐색", "일상 생활"],
+    "adult_young": ["사회 초년생", "인간관계 및 독립", "자기개발", "일상 생활"],
+    "adult_middle": ["가정", "직장생활", "건강 관리", "일상 생활"],
+    "senior": ["은퇴 및 여가 생활", "건강 관리", "사회적 고립", "일상 생활"]
 }
 
 EMOTIONS = ["기쁨", "분노", "슬픔", "두려움", "놀람", "혐오"]
 
+# --- Pydantic Models ---
 class UserInput(BaseModel):
-    person_name: Literal["Alice", "Peter", "Sue"] = Field(..., description="대화할 사람의 이름")
+    person_name: str = Field("Alice", description="대화할 사람의 이름 (예: Alice, Peter, Sue 또는 다른 이름)")
     age: int = Field(..., ge=13, description="대화 참여자의 나이 (13세 이상)")
     gender: Literal["male", "female"] = Field(..., description="대화 참여자의 성별")
     situation: str = Field(..., description="대화의 상황")
@@ -50,6 +56,10 @@ class UserInput(BaseModel):
     step_days: int = Field(..., ge=1, description="대화문 생성 간격 (일 단위)")
     num_conversations: int = Field(..., ge=1, description="생성할 대화문의 갯수")
 
+class SaveRequest(BaseModel):
+    data: List[Dict] # 저장할 대화 데이터 리스트
+
+# --- Helper Functions ---
 def get_age_group(age: int) -> str:
     if 13 <= age <= 19:
         return "teenager"
@@ -70,38 +80,29 @@ def generate_prompt(
 ) -> str:
     num_utterances = random.randint(conversation_length_minutes * 10, conversation_length_minutes * 11)
     
-    initial_emotions = random.sample(EMOTIONS, k=random.randint(2, min(len(EMOTIONS), 4)))
-    initial_emotion_str = ", ".join(initial_emotions) if initial_emotions else "다양한 감정"
-
     prompt = f"""
-    당신은 공감형 대화 생성 챗봇입니다. 아래 정보를 바탕으로 챗봇과 {person_name} 간의 자연스러운 대화문을 생성해주세요.
+    당신은 공감형 대화 생성 챗봇입니다. 아래 정보에 따라 사용자(챗봇)와 {person_name} 간의 자연스러운 대화를 생성해주세요.
+    대화의 각 발화에는 **반드시 가장 적절한 감정 1개만 포함**하여 괄호 안에 명시해야 합니다. 감정은 한국어로 표현해야 합니다.
 
     ---
-    **대화 정보:**
-    - **참여자:** 챗봇과 {person_name}
-    - **{person_name} 정보:**
-        - **이름:** {person_name}
-        - **나이:** {age}세 ({get_age_group(age)} 그룹)
-        - **성별:** {gender}
-    - **상황:** {situation}
-    - **현재 날짜:** {current_date}
-    - **대화 목표:** {person_name}과의 자연스러운 대화 흐름을 유지합니다.
-    - **대화 길이:** 약 {conversation_length_minutes}분 (총 {num_utterances}개 내외의 발화)
-    - **포함될 감정:** {EMOTIONS} 중 적어도 {initial_emotion_str}을(를) 포함하며, 대화 흐름에 따라 자연스럽게 여러 감정이 나타나도록 해주세요. 하나의 감정에 고정되지 않고, 대화 중간에 감정이 변화하는 것처럼 보이도록 생성해주세요.
+    **정보:**
+    - 참여자: 사용자(챗봇), {person_name} ({age}세, {gender}, {get_age_group(age)} 그룹)
+    - 상황: {situation}
+    - 날짜: {current_date}
+    - 대화 길이: 약 {conversation_length_minutes}분 ({num_utterances}개 발화 내외, 이 길이에 맞춰 대화를 자연스럽게 종료해주세요.)
+    - **사용 가능한 감정 (이 목록 내에서만 선택):** {', '.join(EMOTIONS)}
+    - **대화 흐름에 따라 자연스럽게 감정 변화를 반영해주세요.**
 
     ---
-    **대화 형식:**
-    각 발화는 '참여자: [내용] | 감정: [감정1], [감정2]' 형식으로 표현해주세요. 감정은 쉼표로 구분하여 여러 개를 표현할 수 있습니다. 
-    최소 1개에서 최대 3개의 감정을 표현해주세요.
-    예시:
-    사용자: 안녕하세요! 오늘 하루는 어떠셨어요? | 감정: 기쁨
-    {person_name}: 아, 네. 그냥 그랬어요. 좀 피곤하네요. | 감정: 슬픔, 피곤
-
-    ---
-    **대화 시작:**
-    사용자: 안녕하세요, {person_name}님. 요즘 {situation} 관련해서 어떠신지 궁금해서요.
-    {person_name}:
-    """
+    **출력 형식 (반드시 이 형식을 따르세요):**
+    각 발화는 '참여자: [내용] (감정: [감정])' 형식으로 작성합니다.
+    **예시:**
+    사용자: 안녕하세요! 오늘 하루는 어떠셨어요? (감정: 기쁨)
+    {person_name}: 아, 네. 그냥 그랬어요. 좀 피곤하네요. (감정: 슬픔)
+    사용자: 힘든 일이 있으셨군요. 제가 도와드릴 부분이 있을까요? (감정: 걱정)
+    {person_name}: 아니요, 괜찮아요. 그냥 좀 쉬고 싶어요. (감정: 지침)
+    사용자: 그럼 잠시 쉬면서 편안한 시간을 보내세요. (감정: 위로)
+"""
     return prompt, num_utterances
 
 def call_lm_studio(prompt: str, max_tokens: int) -> str:
@@ -110,13 +111,13 @@ def call_lm_studio(prompt: str, max_tokens: int) -> str:
         "model": "eeve-korean-instruct-10.8b-v1.0",
         "messages": [{"role": "user", "content": prompt}],
         "max_tokens": max_tokens,
-        "temperature": 0.7,
+        "temperature": 0,
         "top_p": 0.9,
         "frequency_penalty": 0.0,
         "presence_penalty": 0.0
     }
     try:
-        response = requests.post(LM_STUDIO_API_URL, headers=headers, json=data, timeout=300)
+        response = requests.post(LM_STUDIO_API_URL, headers=headers, json=data, timeout=900)
         response.raise_for_status()
         completion = response.json()
         return completion["choices"][0]["message"]["content"]
@@ -142,6 +143,9 @@ def parse_conversation_data(raw_text: str, person_name: str, total_utterances: i
                 emotions = [e.strip() for e in emotions_str.split(',') if e.strip() in EMOTIONS]
 
                 if speaker_name in ["사용자", person_name]:
+                    # 사용자의 "분노" 감정 할당을 "기쁨"으로 변경
+                    if speaker_name == "사용자" and "분노" in emotions:
+                        emotions = ["기쁨"] 
                     parsed_data.append({
                         "speaker": speaker_name,
                         "content": content,
@@ -159,13 +163,18 @@ def parse_conversation_data(raw_text: str, person_name: str, total_utterances: i
 
     return parsed_data
 
+# --- API Endpoints ---
+
 @app.get("/")
 async def read_root():
     return {"message": "Welcome to the Empathy Conversation Generator API (FastAPI Server)!"}
 
-# 스트리밍 응답을 위한 새로운 엔드포인트
-@app.post("/generate_conversation_stream/")
+@app.post("/generate-stream/")
 async def generate_conversation_stream_endpoint(user_input: UserInput):
+    """
+    사용자 입력에 따라 대화 데이터를 스트리밍 방식으로 생성하여 반환합니다.
+    각 대화는 뉴라인으로 구분된 JSON 객체(NDJSON)로 전송됩니다.
+    """
     async def generate_chunks():
         person_name = user_input.person_name
         age = user_input.age
@@ -175,7 +184,6 @@ async def generate_conversation_stream_endpoint(user_input: UserInput):
         step_days = user_input.step_days
         num_conversations = user_input.num_conversations
 
-        # 시작을 알리는 청크 (선택 사항)
         yield json.dumps({"status": "generating", "message": "대화 생성을 시작합니다..."}, ensure_ascii=False) + "\n"
 
         for i in range(num_conversations):
@@ -190,11 +198,9 @@ async def generate_conversation_stream_endpoint(user_input: UserInput):
             max_tokens_for_lm = total_expected_utterances * 30 
 
             try:
-                # LM Studio API 호출 (이 부분은 여전히 전체 응답을 기다림)
                 raw_lm_response = call_lm_studio(prompt, max_tokens_for_lm)
                 parsed_conversation = parse_conversation_data(raw_lm_response, person_name, total_expected_utterances)
                 
-                # 각 날짜별 대화 데이터를 청크로 전송
                 conversation_data_chunk = {
                     "timestamp": formatted_date,
                     "person_name": person_name,
@@ -206,10 +212,8 @@ async def generate_conversation_stream_endpoint(user_input: UserInput):
                     "total_utterances_generated": len(parsed_conversation),
                     "conversation": parsed_conversation
                 }
-                # 각 청크는 독립적인 JSON 객체여야 함
-                yield json.dumps(conversation_data_chunk, ensure_ascii=False) + "\n"
                 
-                # 진행 상황을 알리는 청크 (선택 사항)
+                yield json.dumps(conversation_data_chunk, ensure_ascii=False) + "\n"
                 yield json.dumps({"status": "progress", "message": f"날짜 {formatted_date} 대화 생성 완료."}, ensure_ascii=False) + "\n"
 
             except HTTPException as e:
@@ -219,14 +223,45 @@ async def generate_conversation_stream_endpoint(user_input: UserInput):
                 yield json.dumps({"status": "error", "message": f"대화 생성 중 오류 발생: {e}"}, ensure_ascii=False) + "\n"
                 return
         
-        # 완료를 알리는 청크
         yield json.dumps({"status": "complete", "message": "모든 대화 생성이 완료되었습니다."}, ensure_ascii=False) + "\n"
 
-    return StreamingResponse(generate_chunks(), media_type="application/x-ndjson") # <--- 이 부분이 수정되었습니다.
+    return StreamingResponse(generate_chunks(), media_type="application/x-ndjson")
 
-@app.get("/get_situation_options/")
+@app.get("/situation-options/")
 async def get_situation_options(age: int):
+    """
+    주어진 나이에 해당하는 대화 상황 옵션을 반환합니다.
+    """
     age_group = get_age_group(age)
     if age_group in SITUATION_OPTIONS:
         return {"situation_options": SITUATION_OPTIONS[age_group]}
     return {"situation_options": []}
+
+@app.post("/save-conversations/")
+async def save_conversations_to_file(request: SaveRequest):
+    """
+    클라이언트로부터 받은 대화 데이터를 JSON 파일로 저장합니다.
+    """
+    data = request.data
+    if not data:
+        raise HTTPException(status_code=400, detail="저장할 데이터가 없습니다.")
+
+    try:
+        # 첫 번째 대화의 정보로 파일 이름 생성 (기존 로직 유지)
+        first_conversation = data[0]
+        person_name = first_conversation.get("person_name", "unknown")
+        timestamp = first_conversation.get("timestamp", datetime.now().strftime("%Y%m%d"))
+        
+        file_name = f"dialogue_report_with_emotions_{person_name}_{timestamp.replace('-', '')}.json"
+        file_path = os.path.join(OUTPUT_DIR, file_name)
+
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        
+        return {"message": f"대화 데이터가 '{file_path}'에 성공적으로 저장되었습니다.", "file_path": file_path}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"파일 저장 중 오류 발생: {e}")
+
+# 개발 시 편리하게 실행
+if __name__ == "__main__":
+    uvicorn.run("main6:app", host="0.0.0.0", port=8000, reload=True)
