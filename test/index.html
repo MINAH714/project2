@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이心터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    colors: { // Custom colors for the theme
+                        'custom-blue-light': '#87CEEB', // Sky Blue for general background
+                        'custom-blue-dark': '#4682B4', // Steel Blue for accents
+                        'custom-yellow': '#FFD700',   // Gold for sections
+                        'custom-green': '#90EE90',    // Light Green for elements
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f2f7; /* 사진의 밝은 파란색 배경과 유사하게 변경 */
+            color: #333;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800 rounded-lg p-2 hover:bg-gray-100 transition-colors">
+                아이心터
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="https://quickly-inspired-midge.ngrok-free.app" class="text-gray-600 hover:text-custom-blue-dark font-medium transition-colors rounded-md px-3 py-2">Demo</a>
+                <a href="#features" class="text-gray-600 hover:text-custom-blue-dark font-medium transition-colors rounded-md px-3 py-2">Chatbot</a>
+                <a href="#contact" class="text-gray-600 hover:text-custom-blue-dark font-medium transition-colors rounded-md px-3 py-2">Report</a>
+                <a href="http://3.107.174.223:8000/" class="bg-custom-blue-dark text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors shadow-md">시작하기</a>
+            </nav>
+            <button class="md:hidden text-gray-600 hover:text-custom-blue-dark focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="bg-gradient-to-r from-custom-blue-light to-custom-blue-dark text-white py-20 text-center rounded-b-xl shadow-lg mx-4 mt-4">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                당신의 감정을 이해하고 공감하는 <br> AI 파트너
+            </h1>
+            <p class="text-lg md:text-xl mb-8 opacity-90">
+                개인화된 대화 생성과 감정 분석으로 더 나은 소통을 경험하세요.
+            </p>
+            <a href="login.html" class="inline-block bg-white text-custom-blue-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-transform transform hover:scale-105 shadow-xl">
+                지금 바로 시작하기
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-white rounded-xl shadow-sm mx-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">우리의 AI 공감 서비스란?</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                우리는 최신 인공지능 기술을 활용하여 사용자의 대화 패턴과 감정 상태를 분석하고, 이에 기반한 공감적인 대화문을 생성합니다. 이는 사용자가 자신의 감정을 더 잘 이해하고, 건강한 소통 방식을 연습하는 데 도움을 줍니다. 개인의 성장과 관계 개선을 위한 강력한 도구입니다.
+            </p>
+            <div class="mt-12 flex flex-wrap justify-center gap-8">
+                <div class="w-full md:w-1/3 p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-custom-blue-dark mb-4">개인화된 대화</h3>
+                    <p class="text-gray-700">사용자의 특성(나이, 성별, 상황)에 맞춰 최적화된 대화 스크립트를 제공합니다.</p>
+                </div>
+                <div class="w-full md:w-1/3 p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-custom-blue-dark mb-4">정교한 감정 분석</h3>
+                    <p class="text-gray-700">대화 내 감정 변화를 다각도로 분석하여 심층적인 인사이트를 제공합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-16 bg-white rounded-xl shadow-sm mx-4 mt-8"> <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">주요 기능</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-custom-blue-dark mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mx-auto"> <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </div>                    
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">AI 챗봇</h3>
+                    <p class="text-gray-600">다양한 상황과 감정을 반영한 AI챗봇과의 대화를 나눌수 있습니다</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-custom-blue-dark mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">감정 분석 리포트</h3>
+                    <p class="text-gray-600">생성된 대화 내 감정의 분포와 변화를 상세한 리포트로 제공합니다.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-custom-blue-dark mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 mx-auto"> <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">S3 데이터 저장</h3>
+                    <p class="text-gray-600">생성된 대화 데이터를 안전하게 AWS S3 버킷에 저장할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
