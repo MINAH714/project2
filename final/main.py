@@ -77,7 +77,8 @@ def generate_prompt(
     selected_emotion = random.choice(EMOTIONS) # 주된 감정 하나 선택
 
     prompt = f"""
-    당신은 공감형 대화 생성 전문가 입니다. 아래 정보를 바탕으로 챗봇과 {person_name} 간의 자연스러운 대화문을 생성해주세요.
+    당신은 공감형 대화 생성 전문가 입니다. 아래 정보를 바탕으로 챗봇과 {person_name} 간의 자연스럽고 **다채로운 대화문**을 생성해주세요.
+    **중복되는 대화 패턴이나 어조는 최대한 피하고, 창의적인 대화 흐름을 만들어 주세요.**
 
     ---
     **대화 정보:**
@@ -275,6 +276,53 @@ async def save_conversations(data: Dict[str, List[Dict]]):
         return {"message": "대화 데이터가 성공적으로 저장되었습니다.", "file_path": file_path}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"파일 저장 중 오류 발생: {e}")
+
+@app.post("/save-user-utterances/")
+async def save_user_utterances(data: Dict[str, List[Dict]]):
+    """
+    Extracts only the specified user's utterances and saves them to a JSON file.
+    """
+    if "data" not in data or not isinstance(data["data"], list):
+        raise HTTPException(status_code=400, detail="Invalid data format. Expected a list under 'data' key.")
+
+    generated_data = data["data"]
+    if not generated_data:
+        raise HTTPException(status_code=400, detail="No conversation data to process.")
+
+    user_utterances_data = []
+    person_name = "unknown" # Default if not found
+
+    for entry in generated_data:
+        if "person_name" in entry:
+            person_name = entry["person_name"]
+        
+        if "conversation" in entry and isinstance(entry["conversation"], list):
+            for utterance in entry["conversation"]:
+                if utterance.get("speaker") == person_name:
+                    user_utterances_data.append({
+                        "timestamp": entry.get("timestamp"),
+                        "speaker": utterance.get("speaker"),
+                        "content": utterance.get("content"),
+                        "emotions": utterance.get("emotions", [])
+                    })
+
+    if not user_utterances_data:
+        raise HTTPException(status_code=404, detail="No utterances found for the specified person.")
+
+    timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
+    file_name = f"user_utterances_report_{person_name}_{timestamp}.json"
+    
+    save_directory = "generated_dialogues"
+    os.makedirs(save_directory, exist_ok=True)
+    file_path = os.path.join(save_directory, file_name)
+
+    try:
+        with open(file_path, "w", encoding="utf-8") as f:
+            json.dump(user_utterances_data, f, ensure_ascii=False, indent=2)
+        return {"message": "사용자 발화 데이터가 성공적으로 저장되었습니다.", "file_path": file_path}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"파일 저장 중 오류 발생: {e}")
+
 
 @app.get("/get_situation_options/")
 async def get_situation_options(age: int):
