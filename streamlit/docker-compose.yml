@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  # app.py (AI 공감형 대화문 생성기)를 위한 서비스
+  streamlit-app-generator:
+    restart: always
+    build:
+      context: . # 현재 디렉토리(/project2/streamlit)가 빌드 컨텍스트임을 나타냅니다.
+      dockerfile: Dockerfile.app # app.py를 위한 Dockerfile 이름
+    image: minah714/project4:latest # app.py를 위한 이미지 태그
+    ports:
+      - "8501:8501" # 호스트의 8501번 포트를 컨테이너의 8501번 포트에 매핑
+    # app.py는 FastAPI 서버에 요청을 보낼 수 있으므로, 필요한 경우 환경 변수 설정
+    # environment:
+    #   - FASTAPI_URL=http://fastapi-service-name:8080 # FastAPI 서비스가 docker-compose 내부에 있다면
+
+  streamlit-s3-uploader:
+    restart: always
+    build:
+      context: . # 현재 디렉토리(/project2/streamlit)가 빌드 컨텍스트임을 나타냅니다.
+      dockerfile: Dockerfile # Dockerfile의 실제 이름을 반영하여 수정했습니다.
+    image: minah714/project3:latest
+    ports:
+      - "8502:8502"
+    env_file:
+      - ./.env # .env 파일이 빌드 컨텍스트 루트에 있음을 나타냅니다.

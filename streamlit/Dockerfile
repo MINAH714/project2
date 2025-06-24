@@ -1,0 +1,31 @@
+# Step 1: Python 3.9-slim-buster 기반 이미지 사용 (경량 이미지)
+# Streamlit은 Python으로 실행되므로 Python 이미지를 사용합니다.
+FROM python:3.9-slim
+
+# Step 2: 컨테이너 내 작업 디렉토리 설정
+WORKDIR /app
+
+# Step 3: Streamlit 및 필요한 Python 라이브러리 설치를 위한 requirements.txt 복사 및 설치
+# s3_app.py에서 사용하는 Streamlit, boto3, python-dotenv를 설치합니다.
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Step 4: Streamlit 애플리케이션 코드 복사
+# s3_app.py 파일을 컨테이너의 /app 디렉토리로 복사합니다.
+COPY . .
+
+# .env 파일이 s3_app.py와 같은 경로에 있다고 가정하고 복사합니다.
+# AWS 자격 증명이 .env 파일에 있다면 이 파일을 반드시 복사해야 합니다.
+COPY .env .
+
+# Step 5: Streamlit 애플리케이션이 리스닝할 포트 노출
+# Streamlit의 기본 포트는 8501입니다. 이 포트를 노출합니다.
+EXPOSE 8502
+
+# Step 6: 애플리케이션 실행 명령어
+# Streamlit 앱을 실행하는 명령어를 지정합니다.
+# `--server.port`는 컨테이너 내부에서 Streamlit이 사용할 포트입니다.
+# `--server.address 0.0.0.0`은 외부에서 접속 가능하도록 모든 네트워크 인터페이스에 바인딩합니다.
+CMD ["streamlit", "run", "s3_app.py", "--server.port=8502", "--server.address=0.0.0.0"]
+
