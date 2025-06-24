@@ -14,6 +14,7 @@ RUN npm install
 COPY main.js .
 COPY index.html .
 COPY login.html .
+COPY report.html .
 # 추가적으로 필요한 정적 자원(CSS, JS, 이미지 등)이 있다면 해당 디렉토리를 복사합니다.
 # 예: COPY public/ ./public/
 

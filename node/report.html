@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter의 주간 감정 그래프</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #e0f7fa; margin: 0; flex-direction: column; color: #333; }
+        .chart-container { width: 90%; max-width: 800px; background-color: white; padding: 25px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.15); margin-bottom: 20px; }
+        h1 { color: #00796b; margin-bottom: 25px; font-size: 2em; }
+        #emotionDetails { margin-top: 20px; padding: 20px; border: 1px solid #b2ebf2; border-radius: 8px; background-color: #e0f2f7; font-size: 1.1em; white-space: pre-line; line-height: 1.6; color: #006064; text-align: left; max-width: 700px; width: 90%; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .emotion-color-box { display: inline-block; width: 18px; height: 18px; margin-right: 8px; border-radius: 4px; vertical-align: middle; }
+        .legend-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px; padding: 10px; background-color: #f1f8e9; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .legend-item { display: flex; align-items: center; font-size: 1.1em; color: #424242; }
+    </style>
+</head>
+<body>
+    <h1>Winter의 주간 감정 그래프</h1>
+    <div class="chart-container">
+        <canvas id="emotionChart"></canvas>
+    </div>
+    <div id="emotionDetails">
+        그래프의 막대를 클릭하면 해당 날짜의 감정 상세 정보가 여기에 표시됩니다.
+    </div>
+
+    <script>
+        const emotionEmoji = {
+            "분노": "😡",
+            "놀람": "😮",
+            "슬픔": "🥲",
+            "기쁨": "😄",
+            "두려움": "😟"
+        };
+
+        const emotionColors = {
+            "기쁨": "rgba(75, 192, 192, 0.7)",    // 청록색
+            "슬픔": "rgba(54, 162, 235, 0.7)",    // 파란색
+            "분노": "rgba(255, 99, 132, 0.7)",    // 빨간색
+            "놀람": "rgba(255, 206, 86, 0.7)",    // 노란색
+            "두려움": "rgba(153, 102, 255, 0.7)", // 보라색
+            "기타": "rgba(201, 203, 207, 0.7)"   // 회색
+        };
+
+        async function fetchEmotionData() {
+            try {
+                // main.js를 통해 같은 경로의 Winter_female_18.json 파일을 불러옵니다.
+                const response = await fetch('/Winter_female_18.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const jsonData = await response.json();
+                return jsonData;
+            } catch (error) {
+                console.error("JSON 파일을 불러오는 데 실패했습니다:", error);
+                document.getElementById('emotionDetails').innerText = "데이터를 불러오는 데 실패했습니다. 서버가 실행 중인지 확인하고, 파일 경로를 확인해주세요.";
+                return null;
+            }
+        }
+
+        function processEmotionData(jsonData, targetPerson = "Winter") {
+            const dailyEmotions = {};
+
+            jsonData.forEach(entry => {
+                if (entry.person_name === targetPerson) {
+                    const date = entry.timestamp; // 이미 YYYY-MM-DD 형식으로 가정
+
+                    if (!dailyEmotions[date]) {
+                        dailyEmotions[date] = {
+                            counts: {},
+                            total: 0
+                        };
+                    }
+
+                    entry.conversation.forEach(chat => {
+                        if (chat.speaker === targetPerson && chat.emotions) {
+                            chat.emotions.forEach(emotion => {
+                                dailyEmotions[date].counts[emotion] = (dailyEmotions[date].counts[emotion] || 0) + 1;
+                                dailyEmotions[date].total += 1;
+                            });
+                        }
+                    });
+                }
+            });
+
+            const processedData = {};
+            // 날짜를 오름차순으로 정렬하여 7개만 선택
+            const sortedDates = Object.keys(dailyEmotions).sort();
+            
+            // 최근 7일 데이터만 사용
+            const recent7Days = sortedDates.slice(-7); 
+
+            recent7Days.forEach(date => {
+                const emotionsCount = dailyEmotions[date] ? dailyEmotions[date].counts : {};
+                if (Object.keys(emotionsCount).length === 0) {
+                     processedData[date] = {
+                        main_emotion: "데이터 없음",
+                        main_emotion_count: 0,
+                        all_emotions: {}
+                    };
+                    return;
+                }
+
+                let mostCommonEmotion = "데이터 없음";
+                let maxCount = 0;
+
+                for (const emotion in emotionsCount) {
+                    if (emotionsCount[emotion] > maxCount) {
+                        maxCount = emotionsCount[emotion];
+                        mostCommonEmotion = emotion;
+                    }
+                }
+                
+                processedData[date] = {
+                    main_emotion: mostCommonEmotion,
+                    main_emotion_count: maxCount,
+                    all_emotions: emotionsCount
+                };
+            });
+            return processedData;
+        }
+
+        async function createChart() {
+            const jsonData = await fetchEmotionData();
+            if (!jsonData) return;
+
+            const processedData = processEmotionData(jsonData, "Winter");
+
+            // 데이터 정렬 (날짜 순서대로)
+            const dates = Object.keys(processedData).sort();
+            const mainEmotionCounts = dates.map(date => processedData[date].main_emotion_count);
+            const mainEmotions = dates.map(date => processedData[date].main_emotion);
+
+            // 각 날짜의 주 감정에 따라 막대 색상 설정
+            const barColors = dates.map(date => emotionColors[processedData[date].main_emotion] || emotionColors["기타"]);
+
+            const ctx = document.getElementById('emotionChart').getContext('2d');
+            const emotionChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: dates.map(date => {
+                        const d = new Date(date);
+                        // 2025년 6월 5일 형식
+                        return `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일`;
+                    }),
+                    datasets: [{
+                        label: '주 감정 갯수',
+                        data: mainEmotionCounts,
+                        backgroundColor: barColors,
+                        borderColor: barColors.map(color => color.replace('0.7', '1')), // 테두리 색상은 불투명하게
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Winter', // 그래프 제목
+                            font: { size: 24, weight: 'bold', family: 'Segoe UI' },
+                            color: '#00796b'
+                        },
+                        legend: {
+                            display: false // 주 감정별 색상은 아래 범례에서 직접 정의
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: '날짜',
+                                font: { size: 16, weight: 'bold' },
+                                color: '#555'
+                            },
+                            ticks: {
+                                maxRotation: 45,
+                                minRotation: 45,
+                                font: { size: 14 }
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '주 감정 갯수',
+                                font: { size: 16, weight: 'bold' },
+                                color: '#555'
+                            },
+                            ticks: {
+                                stepSize: 1, // 갯수는 정수로 표시
+                                font: { size: 14 }
+                            }
+                        }
+                    },
+                    onClick: (event, elements) => {
+                        if (elements.length > 0) {
+                            const index = elements[0].index;
+                            const clickedDateRaw = dates[index]; // YYYY-MM-DD 형식
+                            const dailyData = processedData[clickedDateRaw];
+                            
+                            let detailsHtml = ``;
+                            if (dailyData && dailyData.all_emotions) {
+                                const formattedDate = new Date(clickedDateRaw).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' });
+                                detailsHtml += `${formattedDate}\n`;
+
+                                // 감정 갯수를 내림차순으로 정렬
+                                const sortedEmotions = Object.entries(dailyData.all_emotions).sort(([,countA], [,countB]) => countB - countA);
+
+                                sortedEmotions.forEach(([emotion, count]) => {
+                                    detailsHtml += `${emotion}${emotionEmoji[emotion] || ''}: ${count}회\n`;
+                                });
+                            } else {
+                                detailsHtml += `해당 날짜의 상세 감정 데이터가 없습니다.`;
+                            }
+                            document.getElementById('emotionDetails').innerText = detailsHtml;
+                        }
+                    }
+                }
+            });
+
+            // 범례 생성 (HTML로 직접)
+            const legendContainer = document.createElement('div');
+            legendContainer.className = 'legend-container';
+            
+            // 모든 가능한 감정 목록을 사용하여 범례 생성
+            const allPossibleEmotions = ["기쁨", "슬픔", "분노", "놀람", "두려움"];
+            allPossibleEmotions.forEach(emotion => {
+                const legendItem = document.createElement('span');
+                legendItem.className = 'legend-item';
+                const colorBox = document.createElement('span');
+                colorBox.className = 'emotion-color-box';
+                colorBox.style.backgroundColor = emotionColors[emotion].replace('0.7', '1');
+                legendItem.appendChild(colorBox);
+                legendItem.appendChild(document.createTextNode(emotion));
+                legendContainer.appendChild(legendItem);
+            });
+            document.querySelector('.chart-container').insertAdjacentElement('afterend', legendContainer);
+        }
+
+        // 페이지 로드 시 차트 생성 함수 호출
+        createChart();
+
+    </script>
+</body>
+</html>

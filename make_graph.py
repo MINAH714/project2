@@ -1,140 +1,187 @@
 import streamlit as st
-import json
 import pandas as pd
-import plotly.express as px
+import json
+import matplotlib.pyplot as plt
 from collections import Counter
-import plotly.graph_objects as go
+import datetime
+import os # os 모듈 추가
 
-# JSON 파일 로드
+# JSON 데이터 로드 함수
 @st.cache_data
 def load_data(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return data
 
-# 파일 경로 지정
-json_file_path = 'dialogue_report_with_emotions_Peter_20250620.json'
-json_data = load_data(json_file_path)
+# 앱 제목
+st.title("개인별 감정 분석 대시보드")
 
-st.title("Peter의 감정 분석 대시보드")
+# JSON 파일들이 저장된 폴더 (현재 스크립트와 같은 경로의 'data' 폴더를 가정)
+data_folder = './' # JSON 파일이 현재 스크립트와 같은 폴더에 있다면 './' 로 설정
 
-# 1. 채팅별 감정 육각형 그래프 (레이더 차트)
-st.header("1. 채팅별 감정 분포 (육각형 차트)")
+# 데이터 폴더에서 JSON 파일 목록 가져오기
+try:
+    json_files = [f for f in os.listdir(data_folder) if f.endswith('.json')]
+    if not json_files:
+        st.error(f"'{data_folder}' 폴더에 JSON 파일이 없습니다. 파일 경로를 확인해주세요.")
+        st.stop()
+except FileNotFoundError:
+    st.error(f"'{data_folder}' 폴더를 찾을 수 없습니다. 파일 경로를 확인해주세요.")
+    st.stop()
 
-# 각 채팅의 Peter 감정 데이터 추출 및 카운트
-chat_emotions_data = []
-for i, chat_session in enumerate(json_data):
-    # 'timestamp' 필드가 없는 경우 인덱스로 대체 (JSON 구조를 따름)
-    chat_identifier = chat_session.get('timestamp', f"알 수 없음 (채팅 {i+1})")
-    chat_id = f"채팅 {i+1} (날짜: {chat_identifier})"
-    
-    peter_emotions = []
-    # 'conversation' 필드 확인
-    if 'conversation' in chat_session and isinstance(chat_session['conversation'], list):
-        for utterance in chat_session['conversation']:
-            # 'speaker'가 'Peter'인 경우에만 감정 추출
-            if utterance.get('speaker') == 'Peter' and 'emotions' in utterance and isinstance(utterance['emotions'], list):
-                peter_emotions.extend(utterance['emotions'])
+# 셀렉트 박스로 JSON 파일 선택
+selected_file = st.selectbox("분석할 JSON 파일을 선택하세요:", json_files)
 
-    emotion_counts = Counter(peter_emotions)
-    
-    # 모든 가능한 감정 목록을 정의합니다. (데이터에 없는 감정은 0으로 표시)
-    # 현재 JSON 데이터에서 발견된 감정들을 기반으로 목록을 만듭니다.
-    # 만약 특정 감정들이 항상 포함되어야 한다면, 이 목록을 수동으로 정의할 수 있습니다.
-    all_emotions_set = set()
-    for session in json_data:
-        if 'conversation' in session and isinstance(session['conversation'], list):
-            for utterance in session['conversation']:
-                if 'emotions' in utterance and isinstance(utterance['emotions'], list):
-                    all_emotions_set.update(utterance['emotions'])
-    all_emotions_list = sorted(list(all_emotions_set)) # 일관된 순서를 위해 정렬
+if selected_file:
+    file_path = os.path.join(data_folder, selected_file)
+    data = load_data(file_path)
 
-    # 레이더 차트를 위한 데이터프레임 생성
-    df_emotions = pd.DataFrame([{'emotion': emotion, 'count': emotion_counts.get(emotion, 0)} for emotion in all_emotions_list])
-    df_emotions['chat_id'] = chat_id
-    chat_emotions_data.append(df_emotions)
+    # 데이터의 첫 번째 엔트리에서 person_name 추출 (모든 엔트리의 이름이 같다고 가정)
+    person_name = data[0]['person_name'] if data and 'person_name' in data[0] else "이름 없음"
 
-if chat_emotions_data:
-    # 전체 채팅 목록 (셀렉트 박스용)
-    chat_options = [df['chat_id'].iloc[0] for df in chat_emotions_data]
-    selected_chat = st.selectbox("분석할 채팅을 선택하세요:", chat_options)
+    st.header(f"{person_name}님의 감정 분석 결과")
 
-    # 선택된 채팅에 해당하는 데이터 필터링
-    selected_df_emotions = next((df for df in chat_emotions_data if df['chat_id'].iloc[0] == selected_chat), None)
+    # --------------------------------------------------------------------------
+    # 1. 일별 감정 산포도 (감정별 색상 표시)
+    st.subheader(f"1. {person_name}님의 일별 감정 산포도")
 
-    if selected_df_emotions is not None:
-        # 데이터가 비어있지 않고, 감정 데이터가 있는지 확인
-        if not selected_df_emotions.empty and selected_df_emotions['count'].sum() > 0:
-            fig_radar = px.line_polar(selected_df_emotions, r='count', theta='emotion', line_close=True,
-                                    title=f"{selected_chat} - Peter의 감정 분포",
-                                    template="plotly_white", # 이미지와 유사한 밝은 템플릿 사용
-                                    color_discrete_sequence=["indianred"]) # 색상 조정
-            fig_radar.update_traces(fill='toself', fillcolor='rgba(205, 92, 92, 0.4)') # 내부 채우기 색상 조정
-            fig_radar.update_layout(
-                polar=dict(
-                    radialaxis=dict(
-                        visible=True,
-                        range=[0, selected_df_emotions['count'].max() * 1.1] # 축 범위 자동 조정
-                    )
-                ),
-                font=dict(family="Noto Sans CJK KR", size=12, color="black"), # 폰트 설정 (한글 지원)
-                title_font_size=16
-            )
-            st.plotly_chart(fig_radar, use_container_width=True)
+    st.markdown("""
+    <div style="font-size: small; color: gray;">
+        <p>이 그래프는 각 날짜별로 선택된 인물의 발화에 나타난 감정들을 시각화합니다. 각 감정은 고유한 색상으로 표시됩니다.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.markdown(f"**{person_name}님의 일별 감정 발화 횟수:**")
+
+    # 각 날짜별 감정 데이터 추출 및 집계
+    daily_emotions = {}
+    for entry in data:
+        date_str = entry['timestamp']
+        if date_str not in daily_emotions:
+            daily_emotions[date_str] = []
+        
+        for convo in entry['conversation']:
+            if convo['speaker'] == person_name: # 선택된 인물의 감정만 추출
+                daily_emotions[date_str].extend(convo['emotions'])
+
+    # 날짜를 기준으로 정렬
+    sorted_dates = sorted(daily_emotions.keys())
+
+    # 감정 발화 횟수 출력 (산포도 설명 부분)
+    for date_str in sorted_dates:
+        emotions_count = Counter(daily_emotions[date_str])
+        if emotions_count:
+            st.markdown(f"- **{date_str}**:")
+            for emotion, count in emotions_count.items():
+                st.markdown(f"    - {emotion}: {count}회")
         else:
-            st.warning(f"선택된 채팅 '{selected_chat}'에는 Peter의 감정 데이터가 없거나 모든 감정의 갯수가 0입니다.")
+            st.markdown(f"- **{date_str}**: 감정 발화 없음")
+
+    # 시각화를 위한 데이터프레임 생성
+    scatter_data = []
+    for date_str in sorted_dates:
+        emotions_count = Counter(daily_emotions[date_str])
+        for emotion, count in emotions_count.items():
+            for _ in range(count): # 감정 횟수만큼 데이터 포인트 추가
+                scatter_data.append({'날짜': date_str, '감정': emotion})
+
+    df_scatter = pd.DataFrame(scatter_data)
+
+    # 감정별 색상 매핑
+    emotion_colors = {
+        '기쁨': 'green',
+        '놀람': 'blue',
+        '분노': 'red',
+        '슬픔': 'purple',
+        '두려움': 'orange'
+    }
+
+    # 날짜를 숫자로 변환하여 x축에 사용 (간격 유지를 위해)
+    if not df_scatter.empty:
+        df_scatter['날짜_num'] = df_scatter['날짜'].apply(lambda x: pd.to_datetime(x).toordinal())
+        unique_dates_num = sorted(df_scatter['날짜_num'].unique())
+        date_labels = [datetime.datetime.fromordinal(d).strftime('%Y-%m-%d') for d in unique_dates_num]
+
+        fig1, ax1 = plt.subplots(figsize=(12, 6))
+
+        for emotion, color in emotion_colors.items():
+            subset = df_scatter[df_scatter['감정'] == emotion]
+            if not subset.empty:
+                ax1.scatter(subset['날짜_num'], [emotion] * len(subset), color=color, label=emotion, alpha=0.7, s=100)
+
+        ax1.set_xlabel("날짜")
+        ax1.set_ylabel("감정")
+        ax1.set_title(f"{person_name}님의 일별 감정 산포도")
+        ax1.set_xticks(unique_dates_num)
+        ax1.set_xticklabels(date_labels, rotation=45, ha='right')
+        ax1.legend(title="감정")
+        ax1.grid(True, linestyle='--', alpha=0.6)
+        plt.tight_layout()
+        st.pyplot(fig1)
     else:
-        st.error("선택된 채팅을 찾을 수 없습니다.")
-else:
-    st.info("분석할 채팅 데이터가 없습니다. JSON 파일을 확인해주세요.")
+        st.info(f"{person_name}님의 발화에서 감정 데이터가 발견되지 않았습니다. (일별 산포도)")
 
 
-# 2. 주간 주감정 변화 그래프
-st.header("2. 주간 Peter의 주 감정 변화")
+    # --------------------------------------------------------------------------
+    # 2. 주간 감정 변화 그래프 (가장 많이 등장한 감정)
+    st.subheader(f"2. {person_name}님의 주간 감정 변화 그래프")
 
-weekly_main_emotions = []
+    st.markdown("""
+    <div style="font-size: small; color: gray;">
+        <p>이 그래프는 주간 동안 선택된 인물의 주요 감정 변화를 보여줍니다. 각 날짜의 대표 감정은 해당 일에 가장 많이 나타난 감정으로 선정됩니다.</p>
+    </div>
+    """, unsafe_allow_html=True)
 
-for chat_session in json_data:
-    timestamp = chat_session.get('timestamp')
-    if not timestamp: # 타임스탬프가 없는 경우 건너김
-        continue
+    st.markdown(f"**{person_name}님의 주간 주요 감정 변화:**")
 
-    peter_emotions_day = []
-    if 'conversation' in chat_session and isinstance(chat_session['conversation'], list):
-        for utterance in chat_session['conversation']:
-            if utterance.get('speaker') == 'Peter' and 'emotions' in utterance and isinstance(utterance['emotions'], list):
-                peter_emotions_day.extend(utterance['emotions'])
-    
-    if peter_emotions_day:
-        emotion_counts_day = Counter(peter_emotions_day)
-        # 가장 많이 발생한 감정 (동률일 경우 첫 번째 감정)
-        most_common_emotion = emotion_counts_day.most_common(1)[0][0]
-        weekly_main_emotions.append({'날짜': pd.to_datetime(timestamp), '주감정': most_common_emotion})
+    # 각 날짜별로 가장 많이 등장한 감정 추출 및 횟수 포함
+    weekly_dominant_emotions = []
+    for date_str in sorted_dates:
+        emotions_list = daily_emotions[date_str] # 이미 위에서 daily_emotions에 Winter의 감정만 추출되어 있음
+        
+        if emotions_list:
+            most_common_emotion, count = Counter(emotions_list).most_common(1)[0]
+            weekly_dominant_emotions.append({'날짜': date_str, '주요 감정': most_common_emotion})
+            st.markdown(f"- **{date_str}**: {most_common_emotion} ({count}회)")
+        else:
+            weekly_dominant_emotions.append({'날짜': date_str, '주요 감정': '감정 없음'})
+            st.markdown(f"- **{date_str}**: 감정 발화 없음")
 
-if weekly_main_emotions:
-    df_weekly = pd.DataFrame(weekly_main_emotions)
-    df_weekly = df_weekly.sort_values(by='날짜').reset_index(drop=True)
+    df_weekly = pd.DataFrame(weekly_dominant_emotions)
+    df_weekly['날짜'] = pd.to_datetime(df_weekly['날짜'])
+    df_weekly = df_weekly.sort_values(by='날짜')
 
-    # Plotly Scatter (or Line) 그래프로 주감정 변화 시각화
-    fig_weekly = px.scatter(df_weekly, x='날짜', y='주감정', 
-                            title="Peter의 일별 주 감정 변화",
-                            labels={'날짜': '날짜', '주감정': '주 감정'},
-                            color='주감정', # 감정별 색상 구분
-                            size=[50]*len(df_weekly), # 점 크기 고정 (원하는 크기로 조절)
-                            hover_data={'날짜': "|%Y-%m-%d", '주감정': True}, # 호버 정보
-                            template="plotly_white") # 템플릿 변경
-    
-    fig_weekly.update_traces(marker=dict(symbol='circle', size=15, opacity=0.8)) # 마커 모양 및 크기, 투명도 조정
-    fig_weekly.update_layout(xaxis_title="날짜", yaxis_title="주 감정", yaxis_tickangle=-45,
-                             font=dict(family="Noto Sans CJK KR", size=12, color="black"), # 폰트 설정 (한글 지원)
-                             title_font_size=16) 
-    
-    # Y축 순서 고정 (선택 사항: 감정의 중요도나 빈도에 따라 수동으로 순서를 정할 수 있음)
-    # 데이터에 등장하는 모든 감정을 Y축 순서에 반영
-    all_emotions_for_y_axis = sorted(list(df_weekly['주감정'].unique()))
-    fig_weekly.update_yaxes(categoryorder='array', categoryarray=all_emotions_for_y_axis)
+    # 감정 순서를 지정 (y축 순서)
+    emotion_order = ['기쁨', '놀람', '분노', '슬픔', '두려움', '감정 없음']
+    df_weekly['주요 감정_ordered'] = pd.Categorical(df_weekly['주요 감정'], categories=emotion_order, ordered=True)
 
+    if not df_weekly.empty:
+        fig2, ax2 = plt.subplots(figsize=(12, 6))
 
-    st.plotly_chart(fig_weekly, use_container_width=True)
-else:
-    st.info("Peter의 주간 감정 변화를 분석할 데이터가 충분하지 않습니다. JSON 파일을 확인해주세요.")
+        # 각 감정에 따른 색상 매핑
+        emotion_color_map = {
+            '기쁨': 'lightgreen',
+            '놀람': 'lightblue',
+            '분노': 'salmon',
+            '슬픔': 'mediumpurple',
+            '두려움': 'gold',
+            '감정 없음': 'lightgray'
+        }
+
+        # 그래프 그리기
+        for i, row in df_weekly.iterrows():
+            ax2.plot(row['날짜'], row['주요 감정_ordered'], 'o', 
+                     color=emotion_color_map.get(row['주요 감정'], 'gray'), markersize=10)
+
+        ax2.plot(df_weekly['날짜'], df_weekly['주요 감정_ordered'], color='gray', linestyle='--', alpha=0.5)
+
+        ax2.set_xlabel("날짜")
+        ax2.set_ylabel("주요 감정")
+        ax2.set_title(f"{person_name}님의 주간 감정 변화")
+        ax2.set_xticks(df_weekly['날짜'])
+        ax2.set_xticklabels(df_weekly['날짜'].dt.strftime('%Y-%m-%d'), rotation=45, ha='right')
+        ax2.grid(True, linestyle='--', alpha=0.6)
+        plt.tight_layout()
+        st.pyplot(fig2)
+    else:
+        st.info(f"{person_name}님의 발화에서 감정 데이터가 발견되지 않았습니다. (주간 변화 그래프)")
