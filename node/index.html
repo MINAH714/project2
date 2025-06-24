@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이心터</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* 라이트 그레이 배경 */
+            color: #333;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- 헤더 섹션 -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- 로고/사이트 이름 -->
+            <a href="index.html" class="text-2xl font-bold text-gray-800 rounded-lg p-2 hover:bg-gray-100 transition-colors">
+                아이心터
+            </a>
+            <!-- 네비게이션 메뉴 (모바일에서는 숨김) -->
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-md px-3 py-2">서비스 소개</a>
+                <a href="#features" class="text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-md px-3 py-2">주요 기능</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors rounded-md px-3 py-2">문의하기</a>
+                <a href="login.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors shadow-md">시작하기</a>
+            </nav>
+            <!-- 모바일 메뉴 버튼 (MD 이상에서 숨김) -->
+            <button class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20 text-center rounded-b-xl shadow-lg mx-4 mt-4">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                당신의 감정을 이해하고 공감하는 <br> AI 파트너
+            </h1>
+            <p class="text-lg md:text-xl mb-8 opacity-90">
+                개인화된 대화 생성과 감정 분석으로 더 나은 소통을 경험하세요.
+            </p>
+            <a href="login.html" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-transform transform hover:scale-105 shadow-xl">
+                지금 바로 시작하기
+            </a>
+        </div>
+    </section>
+
+    <!-- 서비스 소개 섹션 -->
+    <section id="about" class="py-16 bg-white rounded-xl shadow-sm mx-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">우리의 AI 공감 서비스란?</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                우리는 최신 인공지능 기술을 활용하여 사용자의 대화 패턴과 감정 상태를 분석하고, 이에 기반한 공감적인 대화문을 생성합니다. 이는 사용자가 자신의 감정을 더 잘 이해하고, 건강한 소통 방식을 연습하는 데 도움을 줍니다. 개인의 성장과 관계 개선을 위한 강력한 도구입니다.
+            </p>
+            <div class="mt-12 flex flex-wrap justify-center gap-8">
+                <div class="w-full md:w-1/3 p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4">개인화된 대화</h3>
+                    <p class="text-gray-700">사용자의 특성(나이, 성별, 상황)에 맞춰 최적화된 대화 스크립트를 제공합니다.</p>
+                </div>
+                <div class="w-full md:w-1/3 p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4">정교한 감정 분석</h3>
+                    <p class="text-gray-700">대화 내 감정 변화를 다각도로 분석하여 심층적인 인사이트를 제공합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 주요 기능 섹션 -->
+    <section id="features" class="py-16 bg-blue-50 rounded-xl shadow-sm mx-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">주요 기능</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 기능 카드 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h10M7 16h10M9 18h6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">AI 챗봇</h3>
+                    <p class="text-gray-600">다양한 상황과 감정을 반영한 AI챗봇과의 대화를 나눌수 있습니다</p>
+                </div>
+                <!-- 기능 카드 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">감정 분석 리포트</h3>
+                    <p class="text-gray-600">생성된 대화 내 감정의 분포와 변화를 상세한 리포트로 제공합니다.</p>
+                </div>
+                <!-- 기능 카드 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-blue-500 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.592 1L21 6m-4 3l4 2m-4-2l-4-2m-4-2H3m2 2l-2 2m0 7l2 2m4 0h14a2 2 0 002-2V5a2 2 0 00-2-2H2a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">S3 데이터 저장</h3>
+                    <p class="text-gray-600">생성된 대화 데이터를 안전하게 AWS S3 버킷에 저장할 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의하기 섹션 -->
+    <section id="contact" class="py-16 bg-white rounded-xl shadow-sm mx-4 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">더 궁금한 점이 있으신가요?</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
+                저희 서비스에 대해 더 자세히 알고 싶으시다면 언제든지 문의해주세요.
+            </p>
+            <a href="#" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-md">
+                문의하기
+            </a>
+        </div>
+    </section>
+
+    <!-- 푸터 섹션 -->
+    <footer class="bg-gray-800 text-white py-8 mt-8 rounded-t-xl mx-4">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 AI 공감 서비스. 모든 권리 보유.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">개인정보처리방침</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">이용약관</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

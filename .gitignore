@@ -71,7 +71,6 @@ ai-1/**/*.png
 **/node/dbConfig.js
 **/node_modules
 **/package-lock.json
-**/package.json
 **/pastdata
 
 **/pastdata
