@@ -120,5 +120,7 @@ if st.button("🚀 선택된 파일 모두 S3에 업로드"):
         if uploaded_count == total_files:
             st.balloons() 
 
+st.link_button("Chatbot", url="http://3.107.174.223:8000/test")
+
 st.markdown("---")
-st.caption("개발자: Gemini AI")
+st.caption("개발자: Minah")

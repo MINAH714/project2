@@ -45,8 +45,6 @@ st.title("AI 공감형 대화문 생성기")
 st.markdown("---")
 st.subheader("대화문 생성 조건 입력")
 
-st.link_button("S3 파일 업로더로 이동", url="http://13.238.128.251:8502")
-
 # --- Parameter Input Form ---
 with st.form("conversation_params_form"):
     current_person_name_input = st.text_input(
@@ -100,6 +98,8 @@ with st.form("conversation_params_form"):
     st.markdown("---")
     
     submitted = st.form_submit_button("AI 대화문 생성", disabled=st.session_state.is_generating)
+    st.link_button("S3 파일 업로더", url="http://13.238.128.251:8502")
+
 
 # --- Conversation Generation Logic ---
 if submitted:
