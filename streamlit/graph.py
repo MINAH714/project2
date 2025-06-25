@@ -68,11 +68,11 @@ def extract_person_emotions_by_date(data: list, person_name: str, emotions_list:
 
 # --- 감정별 색상 정의 ---
 EMOTION_COLORS = {
-    "기쁨": "#FFE893",  # 밝은 노랑
-    "분노": "#CDC1FF",  # 강렬한 빨강
-    "슬픔": "#F5F0CD",  # 하늘색
-    "두려움": "#FFD6BA", # 진회색
-    "놀람": "#9EC6F3"   # 연보라
+    "기쁨": "#FFE893",  
+    "분노": "#CDC1FF",  
+    "슬픔": "#F5F0CD",  
+    "두려움": "#FFD6BA", 
+    "놀람": "#9EC6F3"   
 }
 
 # --- Streamlit 앱 메인 로직 시작 ---
