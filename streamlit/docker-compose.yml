@@ -11,3 +11,14 @@ services:
       - "8502:8502"
     env_file:
       - ./.env # .env 파일이 빌드 컨텍스트 루트에 있음을 나타냅니다.
+      
+  streamlit-make-graph:
+    restart: always
+    build:
+      context: . # 현재 디렉토리(/project2/streamlit)가 빌드 컨텍스트임을 나타냅니다.
+      dockerfile: Dockerfile.graph # Dockerfile의 실제 이름을 반영하여 수정했습니다.
+    image: minah714/project4:latest
+    ports:
+      - "8503:8503"
+    env_file:
+      - ./.env # .env 파일이 빌드 컨텍스트 루트에 있음을 나타냅니다.

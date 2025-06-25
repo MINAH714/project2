@@ -26,7 +26,7 @@ rm:
 	docker-compose rm -f || true
 
 rmi:
-	docker rmi -f minah714/project3:latest || true
+	docker rmi -f minah714/project3:latest minah714/project4:latest || true
 
 clean:
 	$(MAKE) down
@@ -34,6 +34,7 @@ clean:
 
 push:
 	docker push minah714/project3:latest
+	docker push minah714/project4:latest
 
 help:
 	@echo "Usage: make [command]"
@@ -47,7 +48,7 @@ help:
 	@echo "  ps       - List running containers managed by Docker Compose."
 	@echo "  img      - List Docker images specific to this project."
 	@echo "  rm       - Remove stopped containers for this project."
-	@echo "  rmi      - Remove project-specific Docker images."
+	@echo "  rmi      - Remove project-specific Docker images (project3 and project4)."
 	@echo "  clean    - Full cleanup: stop, remove project resources, and global prune."
-	@echo "  push     - Push project Docker images to Docker Hub."
+	@echo "  push     - Push project Docker images to Docker Hub (project3 and project4)."
 	@echo "  help     - Show this help message."
