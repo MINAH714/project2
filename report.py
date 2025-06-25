@@ -1,141 +1,114 @@
-import streamlit as st
-import pandas as pd
+import boto3
 import json
+import pandas as pd
+from collections import defaultdict
 import matplotlib.pyplot as plt
-from collections import Counter
-import datetime
+import seaborn as sns
+import io # BytesIO for reading from S3
 
-# JSON 데이터 로드 함수
-@st.cache_data
-def load_data(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    return data
+# --- S3 설정 ---
+S3_BUCKET_NAME = "kibwa-12"  # 여기에 S3 버킷 이름을 입력하세요
+S3_FILE_KEY = "dummy/winter    # 여기에 S3 파일 경로 (키)를 입력하세요
 
-# 데이터 파일 경로
-file_path = 'Winter_female_18.json'
-data = load_data(file_path)
+def load_json_from_s3(bucket_name: str, file_key: str):
+    """S3에서 JSON 파일을 불러와 파이썬 객체로 반환합니다."""
+    s3 = boto3.client("s3")
+    try:
+        response = s3.get_object(Bucket=bucket_name, Key=file_key)
+        file_content = response["Body"].read().decode("utf-8")
+        json_data = json.loads(file_content)
+        print(f"S3에서 '{file_key}' 파일을 성공적으로 불러왔습니다.")
+        return json_data
+    except Exception as e:
+        print(f"S3에서 파일을 불러오는 중 오류 발생: {e}")
+        raise
 
-st.title("Winter의 감정 분석 그래프")
+# S3에서 데이터 불러오기
+try:
+    s3_data = load_json_from_s3(S3_BUCKET_NAME, S3_FILE_KEY)
+except Exception as e:
+    print(f"오류: S3에서 데이터를 불러오지 못했습니다. 설정(버킷 이름, 파일 키, AWS 자격 증명)을 확인해주세요.")
+    exit() # 스크립트 종료
 
-# 1. 일별 감정 산포도 (감정별 색상 표시)
-st.header("1. 일별 감정 산포도")
+# --- 감정 추출 및 집계 ---
+def extract_winter_emotions_by_date(data: list, target_person_name: str = "Winter"):
+    """
+    JSON 데이터에서 특정 인물의 날짜별 감정 발화 횟수를 추출합니다.
+    """
+    emotion_counts_by_date = defaultdict(lambda: defaultdict(int))
+    # 코드 내에서 사용된 감정 목록 (API 코드에서 정의된 EMOTIONS와 동일)
+    all_emotions = ["기쁨", "분노", "슬픔", "두려움", "놀람"]
 
-# 각 날짜별 감정 데이터 추출 및 집계
-daily_emotions = {}
-for entry in data:
-    date_str = entry['timestamp']
-    if date_str not in daily_emotions:
-        daily_emotions[date_str] = []
+    for entry in data:
+        timestamp = entry.get('timestamp')
+        person_name_in_entry = entry.get('person_name')
+
+        if timestamp and person_name_in_entry == target_person_name:
+            for utterance in entry.get('conversation', []):
+                # 'speaker'가 target_person_name인 경우만 집계
+                if utterance.get('speaker') == target_person_name:
+                    for emotion in utterance.get('emotions', []):
+                        if emotion in all_emotions:
+                            emotion_counts_by_date[timestamp][emotion] += 1
     
-    for convo in entry['conversation']:
-        if convo['speaker'] == 'Winter': # Winter의 감정만 추출
-            daily_emotions[date_str].extend(convo['emotions'])
+    # 누락된 감정은 0으로 채우고, 날짜를 기준으로 정렬
+    processed_data = []
+    # 날짜를 기준으로 정렬하기 위해 딕셔너리 키를 리스트로 변환 후 정렬
+    sorted_dates = sorted(emotion_counts_by_date.keys())
 
-# 날짜를 기준으로 정렬
-sorted_dates = sorted(daily_emotions.keys())
+    for date in sorted_dates:
+        date_data = {"timestamp": date}
+        for emotion in all_emotions:
+            date_data[emotion] = emotion_counts_by_date[date][emotion]
+        processed_data.append(date_data)
 
-# 시각화를 위한 데이터프레임 생성
-scatter_data = []
-for date_str in sorted_dates:
-    emotions_count = Counter(daily_emotions[date_str])
-    for emotion, count in emotions_count.items():
-        for _ in range(count): # 감정 횟수만큼 데이터 포인트 추가
-            scatter_data.append({'날짜': date_str, '감정': emotion})
+    print(f"'{target_person_name}'의 날짜별 감정 데이터 추출 완료.")
+    return processed_data
 
-df_scatter = pd.DataFrame(scatter_data)
+# 'Winter'의 감정 데이터 추출
+winter_emotion_data = extract_winter_emotions_by_date(s3_data, "Winter")
 
-# 감정별 색상 매핑
-emotion_colors = {
-    '기쁨': 'green',
-    '놀람': 'blue',
-    '분노': 'red',
-    '슬픔': 'purple',
-    '두려움': 'orange'
-}
+# 추출된 데이터 확인 (선택 사항)
+print("\n--- 추출된 'Winter'의 날짜별 감정 데이터 ---")
+for row in winter_emotion_data:
+    print(row)
 
-# 날짜를 숫자로 변환하여 x축에 사용 (간격 유지를 위해)
-df_scatter['날짜_num'] = df_scatter['날짜'].apply(lambda x: pd.to_datetime(x).toordinal())
-unique_dates = sorted(df_scatter['날짜'].unique(), key=lambda x: pd.to_datetime(x))
-date_labels = [datetime.datetime.fromordinal(d).strftime('%Y-%m-%d') for d in sorted(df_scatter['날짜_num'].unique())]
+# --- 그래프 생성 ---
+def plot_weekly_emotion_change(emotion_data: list, person_name: str = "Winter"):
+    """
+    날짜별 감정 데이터를 바탕으로 누적 막대 차트를 생성합니다.
+    """
+    if not emotion_data:
+        print("그래프를 생성할 데이터가 없습니다.")
+        return
 
+    df = pd.DataFrame(emotion_data)
+    
+    # 'timestamp' 컬럼을 datetime 객체로 변환하여 정렬에 활용
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
+    df = df.sort_values(by='timestamp')
 
-fig1, ax1 = plt.subplots(figsize=(12, 6))
+    # 그래프를 그리기 위한 데이터프레임 재구성 (long format)
+    # 'timestamp'를 제외한 감정 컬럼들만 선택
+    emotions_columns = [col for col in df.columns if col not in ['timestamp']]
+    df_melted = df.melt(id_vars=['timestamp'], value_vars=emotions_columns, 
+                         var_name='Emotion', value_name='Count')
 
-for emotion, color in emotion_colors.items():
-    subset = df_scatter[df_scatter['감정'] == emotion]
-    ax1.scatter(subset['날짜_num'], [emotion] * len(subset), color=color, label=emotion, alpha=0.7, s=100)
+    plt.figure(figsize=(12, 7))
+    
+    # 누적 막대 차트 생성
+    sns.barplot(x='timestamp', y='Count', hue='Emotion', data=df_melted, dodge=False)
 
-ax1.set_xlabel("날짜")
-ax1.set_ylabel("감정")
-ax1.set_title("Winter의 일별 감정 산포도")
-ax1.set_xticks(sorted(df_scatter['날짜_num'].unique()))
-ax1.set_xticklabels(date_labels, rotation=45, ha='right')
-ax1.legend(title="감정")
-ax1.grid(True, linestyle='--', alpha=0.6)
-plt.tight_layout()
-st.pyplot(fig1)
+    plt.title(f'{person_name}의 날짜별 감정 변화 (누적 막대 차트)', fontsize=16)
+    plt.xlabel('날짜', fontsize=12)
+    plt.ylabel('감정 발화 횟수', fontsize=12)
+    plt.xticks(rotation=45, ha='right') # 날짜 라벨 회전
+    plt.legend(title='감정')
+    plt.tight_layout() # 레이아웃 조정
+    plt.grid(axis='y', linestyle='--', alpha=0.7)
+    
+    plt.show()
+    print("그래프 생성이 완료되었습니다.")
 
-st.markdown("""
-<div style="font-size: small; color: gray;">
-    <p>이 그래프는 각 날짜별로 Winter의 발화에 나타난 감정들을 시각화합니다. 각 감정은 고유한 색상으로 표시됩니다.</p>
-</div>
-""", unsafe_allow_html=True)
-
-# 2. 주간 감정 변화 그래프 (가장 많이 등장한 감정)
-st.header("2. 주간 감정 변화 그래프")
-
-# 각 날짜별로 가장 많이 등장한 감정 추출
-weekly_dominant_emotions = []
-for date_str in sorted_dates:
-    emotions_list = daily_emotions[date_str]
-    if emotions_list:
-        most_common_emotion = Counter(emotions_list).most_common(1)[0][0]
-        weekly_dominant_emotions.append({'날짜': date_str, '주요 감정': most_common_emotion})
-    else:
-        weekly_dominant_emotions.append({'날짜': date_str, '주요 감정': '감정 없음'})
-
-df_weekly = pd.DataFrame(weekly_dominant_emotions)
-df_weekly['날짜'] = pd.to_datetime(df_weekly['날짜'])
-df_weekly = df_weekly.sort_values(by='날짜')
-
-# 감정 순서를 지정 (y축 순서)
-emotion_order = ['기쁨', '놀람', '분노', '슬픔', '두려움', '감정 없음']
-df_weekly['주요 감정_ordered'] = pd.Categorical(df_weekly['주요 감정'], categories=emotion_order, ordered=True)
-
-fig2, ax2 = plt.subplots(figsize=(12, 6))
-
-# 각 감정에 따른 색상 매핑
-emotion_color_map = {
-    '기쁨': 'lightgreen',
-    '놀람': 'lightblue',
-    '분노': 'salmon',
-    '슬픔': 'mediumpurple',
-    '두려움': 'gold',
-    '감정 없음': 'lightgray'
-}
-
-# 그래프 그리기
-# 산점도를 사용하여 날짜와 감정을 표시
-for i, row in df_weekly.iterrows():
-    ax2.plot(row['날짜'], row['주요 감정_ordered'], 'o', 
-             color=emotion_color_map.get(row['주요 감정'], 'gray'), markersize=10)
-
-# 날짜 간에 선으로 연결하여 변화 추이 시각화
-ax2.plot(df_weekly['날짜'], df_weekly['주요 감정_ordered'], color='gray', linestyle='--', alpha=0.5)
-
-
-ax2.set_xlabel("날짜")
-ax2.set_ylabel("주요 감정")
-ax2.set_title("Winter의 주간 감정 변화")
-ax2.set_xticks(df_weekly['날짜'])
-ax2.set_xticklabels(df_weekly['날짜'].dt.strftime('%Y-%m-%d'), rotation=45, ha='right')
-ax2.grid(True, linestyle='--', alpha=0.6)
-plt.tight_layout()
-st.pyplot(fig2)
-
-st.markdown("""
-<div style="font-size: small; color: gray;">
-    <p>이 그래프는 주간(6월 1일 ~ 6월 7일) 동안 Winter의 주요 감정 변화를 보여줍니다. 각 날짜의 대표 감정은 해당 일에 가장 많이 나타난 감정으로 선정됩니다.</p>
-</div>
-""", unsafe_allow_html=True)
+# 그래프 생성 함수 호출
+plot_weekly_emotion_change(winter_emotion_data, "Winter")
