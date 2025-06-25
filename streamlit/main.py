@@ -13,8 +13,7 @@ import os # For saving files
 app = FastAPI()
 
 origins = [
-    "http://localhost",
-    "http://localhost:8501", # Streamlit's default port
+    "*", # Streamlit's default port
 ]
 
 app.add_middleware(
