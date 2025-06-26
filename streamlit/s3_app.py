@@ -71,7 +71,7 @@ with st.sidebar:
 
     # 각 메뉴 항목 HTML 링크
     st.markdown('<a href="https://quickly-inspired-midge.ngrok-free.app" target="_blank" class="button-link">🔗 Dummy</a>', unsafe_allow_html=True)
-    st.markdown('<a href="https://13.238.128.251:8502" target="_blank" class="button-link">☁️ S3</a>', unsafe_allow_html=True)
+    st.markdown('<a href="#" target="_blank" class="button-link">☁️ S3</a>', unsafe_allow_html=True)
     st.markdown('<a href="http://3.107.174.223:8000/test" target="_blank" class="button-link">🤖 Chatbot</a>', unsafe_allow_html=True)
     st.markdown('<a href="https://13.238.128.251:8503" class="button-link">📄 Report</a>', unsafe_allow_html=True)
 
