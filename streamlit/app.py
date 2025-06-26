@@ -16,6 +16,8 @@ if 'person_name_input_value' not in st.session_state:
 if 'situation_input_value' not in st.session_state: # Add for situation text input
     st.session_state.situation_input_value = ""
 
+
+
 # --- Conversation Report Rendering Function ---
 def render_conversations_report(report_data):
     st.subheader("생성된 대화 리포트")
