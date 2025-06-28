@@ -117,12 +117,12 @@ with st.sidebar:
     # 실제 Streamlit 페이지 전환 로직은 Streamlit의 멀티페이지 앱 기능을 사용해야 합니다.
     # 이 예시에서는 외부 링크로 처리합니다.
     st.markdown('<a href="https://quickly-inspired-midge.ngrok-free.app" target="_blank" class="button-link">🔗 Dummy</a>', unsafe_allow_html=True)
-    st.markdown('<a href="https://13.238.128.251:8502" target="_blank" class="button-link">☁️ S3</a>', unsafe_allow_html=True)
+    st.markdown('<a href="http://13.238.128.251:8502/" target="_blank" class="button-link">☁️ S3</a>', unsafe_allow_html=True)
     st.markdown('<a href="http://3.107.174.223:8000/test" target="_blank" class="button-link">🤖 Chatbot</a>', unsafe_allow_html=True)
     # Report 링크를 클릭하면 현재 페이지로 돌아오는 동작을 구현하는 것은
     # Streamlit의 아키텍처 상 단순한 HTML 링크로는 어렵습니다.
     # 여기서는 임시적으로 placeholder URL을 사용합니다.
-    st.markdown('<a href="https://13.238.128.251:8503" class="button-link">📄 Report</a>', unsafe_allow_html=True) 
+    st.markdown('<a href="#" class="button-link">📄 Report</a>', unsafe_allow_html=True) 
 
     st.markdown("---") # 시각적 구분선
     st.info("이 앱은 'Winter'의 감정 변화를 분석합니다.")
